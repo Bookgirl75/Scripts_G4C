@@ -181,8 +181,15 @@ public class PlantButton : MonoBehaviour
         if ((plantCollision.kalesReady == true) & (kalePlanted == false))
         {
             growthController.PlantKale();
-            tomatoPlanted = true;
-            Destroy(tomatoPacket);
+            kalePlanted = true;
+            Destroy(kalePacket);
+        }
+
+        if ((plantCollision.cabbagesReady == true) & (cabbagePlanted == false))
+        {
+            growthController.PlantCabbage();
+            cabbagePlanted = true;
+            Destroy(cabbagePacket);
         }
 
     }

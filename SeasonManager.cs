@@ -20,6 +20,26 @@ public class SeasonManager : MonoBehaviour
     public Collision4Planting collision4Planting;
     public ScenesManager scenesManager;
 
+    [SerializeField] GameObject[] peas;
+    [SerializeField] GameObject[] carrots;
+    [SerializeField] GameObject[] peppers;
+    [SerializeField] GameObject[] potatoes;
+    [SerializeField] GameObject[] lettuces;
+    [SerializeField] GameObject[] cucs;
+    [SerializeField] GameObject[] onions;
+    [SerializeField] GameObject[] corns;
+    [SerializeField] GameObject[] squashes;
+    [SerializeField] GameObject[] pumpkins;
+    [SerializeField] GameObject[] turnips;
+    [SerializeField] GameObject[] tomatoes;
+    [SerializeField] GameObject[] pintos;
+    [SerializeField] GameObject[] greenBeans;
+    [SerializeField] GameObject[] broccolies;
+    [SerializeField] GameObject[] celeries;
+    [SerializeField] GameObject[] brussels;
+    [SerializeField] GameObject[] kales;
+    [SerializeField] GameObject[] cabbages;
+
     public float dataTimer = 3;
 
     public bool textOn = false;
@@ -334,6 +354,7 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingJun()
     {
+        badEventText.text = "The bugs are plentiful this year. All plants decrease production by 40%";
     }
 
 
@@ -354,6 +375,10 @@ public class SeasonManager : MonoBehaviour
     public void BadThingAug()
     {
         badEventText.text = "Temperatures spike due to climate change. All plants that can't survive at over 80 degrees die.";
+        foreach (GameObject celery in celeries)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -364,6 +389,55 @@ public class SeasonManager : MonoBehaviour
     {
         badEventText.text = "A lightning strike causes the dry brush to ignite, starting a forest fire. All crops in the garden and any remaining seed packets are destroyed.";
         amountAfterLoss = 0;
+
+        foreach (GameObject pepper in peppers)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject pea in peas)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject potato in potatoes)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject lettuce in lettuces)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject cuc in cucs)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject carrot in carrots)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject tomato in tomatoes)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject onion in onions)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject squash in squashes)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject celery in celeries)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject celery in celeries)
+        {
+            Destroy(gameObject);
+        }
+        foreach (GameObject celery in celeries)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -501,5 +575,54 @@ public class SeasonManager : MonoBehaviour
             growthController.GrowTomatoSprite();
         }
 
+        if (plantButton.pintoPlanted == true)
+        {
+            growthController.pintoMonthsCounted = growthController.pintoMonthsCounted + 1;
+            growthController.pintoSpriteStart = growthController.pintoMonthsCounted + 1;
+            growthController.GrowPintoSprite();
+        }
+
+        if (plantButton.greenBeanPlanted == true)
+        {
+            growthController.greenBeanMonthsCounted = growthController.greenBeanMonthsCounted + 1;
+            growthController.greenBeanSpriteStart = growthController.greenBeanMonthsCounted + 1;
+            growthController.GrowGreenBeanSprite();
+        }
+
+
+        if (plantButton.broccoliPlanted == true)
+        {
+            growthController.broccoliMonthsCounted = growthController.broccoliMonthsCounted + 1;
+            growthController.broccoliSpriteStart = growthController.broccoliMonthsCounted + 1;
+            growthController.GrowBroccoliSprite();
+        }
+
+        if (plantButton.celeryPlanted == true)
+        {
+            growthController.celeryMonthsCounted = growthController.celeryMonthsCounted + 1;
+            growthController.celerySpriteStart = growthController.celeryMonthsCounted + 1;
+            growthController.GrowCelerySprite();
+        }
+
+        if (plantButton.brusselPlanted == true)
+        {
+            growthController.brusselMonthsCounted = growthController.brusselMonthsCounted + 1;
+            growthController.brusselSpriteStart = growthController.brusselMonthsCounted + 1;
+            growthController.GrowBrusselSprite();
+        }
+
+        if (plantButton.kalePlanted == true)
+        {
+            growthController.kaleMonthsCounted = growthController.kaleMonthsCounted + 1;
+            growthController.kaleSpriteStart = growthController.kaleMonthsCounted + 1;
+            growthController.GrowKaleSprite();
+        }
+
+        if (plantButton.cabbagePlanted == true)
+        {
+            growthController.cabbageMonthsCounted = growthController.cabbageMonthsCounted + 1;
+            growthController.cabbageSpriteStart = growthController.cabbageMonthsCounted + 1;
+            growthController.GrowCabbageSprite();
+        }
     }
 }

@@ -89,7 +89,7 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 24;
                 averageHarvest = 15;
                 harvestPercent = (growthController.tomatoPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -122,11 +122,11 @@ public class CollisionBasket : MonoBehaviour
         if (collision.gameObject.CompareTag("carrot"))
         {
             if (plantButton.carrotPlanted == true)
-            { 
+            {
                 averageCaloriesPerObject = 23;
                 averageHarvest = 1;
                 harvestPercent = (growthController.carrotPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -163,7 +163,7 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 35;
                 averageHarvest = 10;
                 harvestPercent = (growthController.pepperPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -200,7 +200,7 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 140;
                 averageHarvest = 8;
                 harvestPercent = (growthController.potatoPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -237,7 +237,7 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 110;
                 averageHarvest = 1;
                 harvestPercent = (growthController.lettucePlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -274,7 +274,7 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 21;
                 averageHarvest = 12;
                 harvestPercent = (growthController.cucPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -311,7 +311,7 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 660;
                 averageHarvest = 1;
                 harvestPercent = (growthController.onionPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -348,7 +348,7 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 68;
                 averageHarvest = 12;
                 harvestPercent = (growthController.squashPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -385,7 +385,7 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 141;
                 averageHarvest = 2;
                 harvestPercent = (growthController.cornPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -422,7 +422,7 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 256;
                 averageHarvest = 8;
                 harvestPercent = (growthController.pumpkinPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
@@ -459,18 +459,18 @@ public class CollisionBasket : MonoBehaviour
                 averageCaloriesPerObject = 73;
                 averageHarvest = 1;
                 harvestPercent = (growthController.turnipPlantTiming) * (averageHarvest);
-                
+
                 Destroy(collision.gameObject);
                 collision4Planting.plantsInGarden--;
 
                 textOn = true;
 
-                if ((growthController.tomatoMonthsCounted == 1) || (growthController.tomatoMonthsCounted == 2))
+                if ((growthController.turnipMonthsCounted == 1) || (growthController.turnipMonthsCounted == 2))
                 {
                     CalcCalories();
                 }
 
-                else if (growthController.tomatoMonthsCounted == 3)
+                else if (growthController.turnipMonthsCounted == 3)
                 {
                     harvestPercentByTime = harvestPercent * .7f;
                     CalcCaloriesOffMonths();
@@ -483,7 +483,265 @@ public class CollisionBasket : MonoBehaviour
             }
         }
 
-        
+        if (collision.gameObject.CompareTag("pintoBean"))
+        {
+            if (plantButton.pintoPlanted == true)
+            {
+                averageCaloriesPerObject = 98;
+                averageHarvest = 24;
+                harvestPercent = (growthController.pintoPlantTiming) * (averageHarvest);
+
+                Destroy(collision.gameObject);
+                collision4Planting.plantsInGarden--;
+
+                textOn = true;
+
+                if ((growthController.pintoMonthsCounted == 3) || (growthController.pintoMonthsCounted == 4) || (growthController.pintoMonthsCounted == 5))
+                {
+                    CalcCalories();
+                }
+
+                else if (growthController.pintoMonthsCounted == 6)
+                {
+                    harvestPercentByTime = harvestPercent * .7f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else if (growthController.pintoMonthsCounted == 2)
+                {
+                    harvestPercentByTime = harvestPercent * .6f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else
+                {
+                    caloriesGainedText.text = "Calories gained: 0";
+                }
+            }
+
+        }
+
+        if (collision.gameObject.CompareTag("greenBean"))
+        {
+            if (plantButton.greenBeanPlanted == true)
+            {
+                averageCaloriesPerObject = 11;
+                averageHarvest = 16;
+                harvestPercent = (growthController.greenBeanPlantTiming) * (averageHarvest);
+
+                Destroy(collision.gameObject);
+                collision4Planting.plantsInGarden--;
+
+                textOn = true;
+
+                if (growthController.greenBeanMonthsCounted == 2)
+                {
+                    CalcCalories();
+                }
+
+                else if (growthController.greenBeanMonthsCounted == 3)
+                {
+                    harvestPercentByTime = harvestPercent * .8f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else if (growthController.greenBeanMonthsCounted == 1)
+                {
+                    harvestPercentByTime = harvestPercent * .6f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else
+                {
+                    caloriesGainedText.text = "Calories gained: 0";
+                }
+            }
+        }
+
+        if (collision.gameObject.CompareTag("broccoli"))
+        {
+            if (plantButton.broccoliPlanted == true)
+            {
+                averageCaloriesPerObject = 119;
+                averageHarvest = 1;
+                harvestPercent = (growthController.broccoliPlantTiming) * (averageHarvest);
+
+                Destroy(collision.gameObject);
+                collision4Planting.plantsInGarden--;
+
+                textOn = true;
+
+                if ((growthController.broccoliMonthsCounted == 2) || (growthController.broccoliMonthsCounted == 3) || (growthController.broccoliMonthsCounted == 4))
+                {
+                    CalcCalories();
+                }
+
+                else if (growthController.broccoliMonthsCounted == 5)
+                {
+                    harvestPercentByTime = harvestPercent * .8f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else if (growthController.broccoliMonthsCounted == 1)
+                {
+                    harvestPercentByTime = harvestPercent * .6f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else
+                {
+                    caloriesGainedText.text = "Calories gained: 0";
+                }
+            }
+        }
+
+        if (collision.gameObject.CompareTag("celery"))
+        {
+            if (plantButton.celeryPlanted == true)
+            {
+                averageCaloriesPerObject = 48;
+                averageHarvest = 1;
+                harvestPercent = (growthController.celeryPlantTiming) * (averageHarvest);
+
+                Destroy(collision.gameObject);
+                collision4Planting.plantsInGarden--;
+
+                textOn = true;
+
+                if (growthController.celeryMonthsCounted == 4)
+                {
+                    CalcCalories();
+                }
+
+                else if (growthController.celeryMonthsCounted == 5)
+                {
+                    harvestPercentByTime = harvestPercent * .8f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else if (growthController.celeryMonthsCounted == 3)
+                {
+                    harvestPercentByTime = harvestPercent * .6f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else
+                {
+                    caloriesGainedText.text = "Calories gained: 0";
+                }
+            }
+        }
+
+        if (collision.gameObject.CompareTag("brusselSprout"))
+        {
+            if (plantButton.brusselPlanted == true)
+            {
+                averageCaloriesPerObject = 8;
+                averageHarvest = 80;
+                harvestPercent = (growthController.brusselPlantTiming) * (averageHarvest);
+
+                Destroy(collision.gameObject);
+                collision4Planting.plantsInGarden--;
+
+                textOn = true;
+
+                if ((growthController.brusselMonthsCounted == 3) || (growthController.brusselMonthsCounted == 4))
+                {
+                    CalcCalories();
+                }
+
+                else if (growthController.brusselMonthsCounted == 5)
+                {
+                    harvestPercentByTime = harvestPercent * .8f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else if (growthController.brusselMonthsCounted == 2)
+                {
+                    harvestPercentByTime = harvestPercent * .6f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else
+                {
+                    caloriesGainedText.text = "Calories gained: 0";
+                }
+            }
+        }
+
+        if (collision.gameObject.CompareTag("kale"))
+        {
+            if (plantButton.kalePlanted == true)
+            {
+                averageCaloriesPerObject = 13;
+                averageHarvest = 16;
+                harvestPercent = (growthController.kalePlantTiming) * (averageHarvest);
+
+                Destroy(collision.gameObject);
+                collision4Planting.plantsInGarden--;
+
+                textOn = true;
+
+                if (growthController.kaleMonthsCounted == 2)
+                {
+                    CalcCalories();
+                }
+
+                else if (growthController.kaleMonthsCounted == 3)
+                {
+                    harvestPercentByTime = harvestPercent * .8f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else if (growthController.kaleMonthsCounted == 1)
+                {
+                    harvestPercentByTime = harvestPercent * .6f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else
+                {
+                    caloriesGainedText.text = "Calories gained: 0";
+                }
+            }
+        }
+
+        if (collision.gameObject.CompareTag("cabbage"))
+        {
+            if (plantButton.cabbagePlanted == true)
+            {
+                averageCaloriesPerObject = 9;
+                averageHarvest = 33;
+                harvestPercent = (growthController.cabbagePlantTiming) * (averageHarvest);
+
+                Destroy(collision.gameObject);
+                collision4Planting.plantsInGarden--;
+
+                textOn = true;
+
+                if ((growthController.cabbageMonthsCounted == 2) || (growthController.cabbageMonthsCounted == 3))
+                {
+                    CalcCalories();
+                }
+
+                else if (growthController.cabbageMonthsCounted == 4)
+                {
+                    harvestPercentByTime = harvestPercent * .8f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else if (growthController.cabbageMonthsCounted == 1)
+                {
+                    harvestPercentByTime = harvestPercent * .6f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else
+                {
+                    caloriesGainedText.text = "Calories gained: 0";
+                }
+            }
+        }
     }
 
     public void CalcCalories()
@@ -511,5 +769,6 @@ public class CollisionBasket : MonoBehaviour
             dataTimer = 1;
         }
     }
-
 }
+
+
