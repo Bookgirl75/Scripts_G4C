@@ -6,14 +6,37 @@ public class SeasonManager : MonoBehaviour
 {
     public int season = 1;
 
-    public int badThing;
-    public int goodThing;
+    public int badThing = 1;
+    public int goodThing = 1;
 
-    public float amountAfterLoss;
+    public float percentGain;
+    public float percentLoss;
 
     public TextMeshProUGUI seasonText;
     public TextMeshProUGUI goodEventText;
     public TextMeshProUGUI badEventText;
+
+    public GameObject peaPacket;
+    public GameObject pepperPacket;
+    public GameObject carrotPacket;
+    public GameObject potatoPacket;
+    public GameObject lettucePacket;
+    public GameObject cucPacket;
+    public GameObject onionPacket;
+    public GameObject cornPacket;
+    public GameObject squashPacket;
+    public GameObject pumpkinPacket;
+    public GameObject turnipPacket;
+    public GameObject tomatoPacket;
+    public GameObject pintoPacket;
+    public GameObject greenBeanPacket;
+    public GameObject broccoliPacket;
+    public GameObject celeryPacket;
+    public GameObject brusselPacket;
+    public GameObject kalePacket;
+    public GameObject cabbagePacket;
+
+    public GameObject eventButton;
 
     public PlantButton plantButton;
     public GrowthController growthController;
@@ -56,6 +79,26 @@ public class SeasonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        peas = GameObject.FindGameObjectsWithTag("pea");
+        carrots = GameObject.FindGameObjectsWithTag("carrot");
+        peppers = GameObject.FindGameObjectsWithTag("bellPepper");
+        potatoes = GameObject.FindGameObjectsWithTag("potato");
+        lettuces = GameObject.FindGameObjectsWithTag("lettuce");
+        cucs = GameObject.FindGameObjectsWithTag("cucumber");
+        onions = GameObject.FindGameObjectsWithTag("onion");
+        squashes = GameObject.FindGameObjectsWithTag("squash");
+        corns = GameObject.FindGameObjectsWithTag("corn");
+        pumpkins = GameObject.FindGameObjectsWithTag("pumpkin");
+        turnips = GameObject.FindGameObjectsWithTag("turnip");
+        tomatoes = GameObject.FindGameObjectsWithTag("tomato");
+        pintos = GameObject.FindGameObjectsWithTag("pintoBean");
+        greenBeans = GameObject.FindGameObjectsWithTag("greenBean");
+        broccolies = GameObject.FindGameObjectsWithTag("broccoli");
+        celeries = GameObject.FindGameObjectsWithTag("celery");
+        brussels = GameObject.FindGameObjectsWithTag("brusselSprout");
+        kales = GameObject.FindGameObjectsWithTag("kale");
+        cabbages = GameObject.FindGameObjectsWithTag("cabbage");
+
 
         if (season == 1)
         {
@@ -307,184 +350,379 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingJan()
     {
-        
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingJan()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingFeb()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingFeb()
     {
         badEventText.text = "The ground is too frozen to plant early crops. Nothing gets planted this month.";
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingMar()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingMar()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingApr()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingApr()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingMay()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingMay()
     {
         badEventText.text = "A family of deer sneak under the fence and eat half of everything planted before you can stop them.";
-        amountAfterLoss = collision4Planting.plantsInGarden * .5f;
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingJun()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingJun()
     {
         badEventText.text = "The bugs are plentiful this year. All plants decrease production by 40%";
+        percentLoss = .4f;
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingJul()
     {
         goodEventText.text = "A suprise rainfall increase plant production by 25%.";
+        percentGain = .25f;
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
 
     }
     public void BadThingJul()
     {
-        badEventText.text = "A lack of rainfall causes a drought that kills all sensitive plants and decreases harvest";
+        badEventText.text = "A lack of rainfall causes a drought that kills all sensitive plants and decreases harvest by 25%";
+        percentLoss = .25f;
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingAug()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingAug()
     {
         badEventText.text = "Temperatures spike due to climate change. All plants that can't survive at over 80 degrees die.";
         foreach (GameObject celery in celeries)
         {
-            Destroy(gameObject);
+            Destroy(celery);
         }
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingSep()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingSep()
     {
         badEventText.text = "A lightning strike causes the dry brush to ignite, starting a forest fire. All crops in the garden and any remaining seed packets are destroyed.";
-        amountAfterLoss = 0;
 
         foreach (GameObject pepper in peppers)
         {
-            Destroy(gameObject);
+            Destroy(pepper);
         }
         foreach (GameObject pea in peas)
         {
-            Destroy(gameObject);
+            Destroy(pea);
         }
         foreach (GameObject potato in potatoes)
         {
-            Destroy(gameObject);
+            Destroy(potato);
         }
         foreach (GameObject lettuce in lettuces)
         {
-            Destroy(gameObject);
+            Destroy(lettuce);
         }
         foreach (GameObject cuc in cucs)
         {
-            Destroy(gameObject);
+            Destroy(cuc);
         }
         foreach (GameObject carrot in carrots)
         {
-            Destroy(gameObject);
+            Destroy(carrot);
         }
         foreach (GameObject tomato in tomatoes)
         {
-            Destroy(gameObject);
+            Destroy(tomato);
         }
         foreach (GameObject onion in onions)
         {
-            Destroy(gameObject);
+            Destroy(onion);
         }
         foreach (GameObject squash in squashes)
         {
-            Destroy(gameObject);
+            Destroy(squash);
+        }
+        foreach (GameObject corn in corns)
+        {
+            Destroy(corn);
+        }
+        foreach (GameObject pumpkin in pumpkins)
+        {
+            Destroy(pumpkin);
+        }
+        foreach (GameObject turnip in turnips)
+        {
+            Destroy(turnip);
+        }
+        foreach (GameObject pinto in pintos)
+        {
+            Destroy(pinto);
+        }
+        foreach (GameObject greenBean in greenBeans)
+        {
+            Destroy(greenBean);
+        }
+        foreach (GameObject broccoli in broccolies)
+        {
+            Destroy(broccoli);
         }
         foreach (GameObject celery in celeries)
         {
-            Destroy(gameObject);
+            Destroy(celery);
         }
-        foreach (GameObject celery in celeries)
+        foreach (GameObject brussel in brussels)
         {
-            Destroy(gameObject);
+            Destroy(brussel);
         }
-        foreach (GameObject celery in celeries)
+        foreach (GameObject kale in kales)
         {
-            Destroy(gameObject);
+            Destroy(kale);
         }
+        foreach (GameObject cabbage in cabbages)
+        {
+            Destroy(cabbage);
+        }
+
+        Destroy(peaPacket);
+        Destroy(pepperPacket);
+        Destroy(potatoPacket);
+        Destroy(lettucePacket);
+        Destroy(cucPacket);
+        Destroy(carrotPacket);
+        Destroy(tomatoPacket);
+        Destroy(onionPacket);
+        Destroy(squashPacket);
+        Destroy(cornPacket);
+        Destroy(pumpkinPacket);
+        Destroy(turnipPacket);
+        Destroy(pintoPacket);
+        Destroy(greenBeanPacket);
+        Destroy(broccoliPacket);
+        Destroy(celeryPacket);
+        Destroy(brusselPacket);
+        Destroy(kalePacket);
+        Destroy(cabbagePacket);
+
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingOct()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingOct()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingNov()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingNov()
     {
         badEventText.text = "Rainfalls begin in earnest, causing flooding and mudslides. All crops in the garden die.";
-        amountAfterLoss = 0;
+
+        foreach (GameObject pepper in peppers)
+        {
+            Destroy(pepper);
+        }
+        foreach (GameObject pea in peas)
+        {
+            Destroy(pea);
+        }
+        foreach (GameObject potato in potatoes)
+        {
+            Destroy(potato);
+        }
+        foreach (GameObject lettuce in lettuces)
+        {
+            Destroy(lettuce);
+        }
+        foreach (GameObject cuc in cucs)
+        {
+            Destroy(cuc);
+        }
+        foreach (GameObject carrot in carrots)
+        {
+            Destroy(carrot);
+        }
+        foreach (GameObject tomato in tomatoes)
+        {
+            Destroy(tomato);
+        }
+        foreach (GameObject onion in onions)
+        {
+            Destroy(onion);
+        }
+        foreach (GameObject squash in squashes)
+        {
+            Destroy(squash);
+        }
+        foreach (GameObject corn in corns)
+        {
+            Destroy(corn);
+        }
+        foreach (GameObject pumpkin in pumpkins)
+        {
+            Destroy(pumpkin);
+        }
+        foreach (GameObject turnip in turnips)
+        {
+            Destroy(turnip);
+        }
+        foreach (GameObject pinto in pintos)
+        {
+            Destroy(pinto);
+        }
+        foreach (GameObject greenBean in greenBeans)
+        {
+            Destroy(greenBean);
+        }
+        foreach (GameObject broccoli in broccolies)
+        {
+            Destroy(broccoli);
+        }
+        foreach (GameObject celery in celeries)
+        {
+            Destroy(celery);
+        }
+        foreach (GameObject brussel in brussels)
+        {
+            Destroy(brussel);
+        }
+        foreach (GameObject kale in kales)
+        {
+            Destroy(kale);
+        }
+        foreach (GameObject cabbage in cabbages)
+        {
+            Destroy(cabbage);
+        }
+
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
 
     public void GoodThingDec()
     {
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingDec()
     {
         badEventText.text = "A suprise freeze kills all late harvest plants.";
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
 
     public void ResetText()
     {
         badEventText.text = "";
         goodEventText.text = "";
+        badEventText.transform.gameObject.SetActive(false);
+        goodEventText.transform.gameObject.SetActive(false);
+        
+
+        ResetButton();
     }
 
-
-    public void CountDownTimer()
+    public void ResetButton()
     {
-        dataTimer -= Time.deltaTime;
-
-        if (dataTimer <= 0)
-        {
-            ResetText();
-            dataTimer = 3;
-        }
+        eventButton.transform.gameObject.SetActive(false);
     }
-
 
 
     public void SeasonButtonChange()

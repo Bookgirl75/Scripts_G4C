@@ -7,6 +7,7 @@ public class CollisionBasket : MonoBehaviour
     public GrowthController growthController;
     public PlantButton plantButton;
     public Collision4Planting collision4Planting;
+    public SeasonManager seasonManager;
 
     public TextMeshProUGUI calorieText;
     public TextMeshProUGUI caloriesGainedText;
@@ -18,6 +19,9 @@ public class CollisionBasket : MonoBehaviour
 
     public float totalCalories;
     public float caloriesGained;
+    public float amountSubtract;
+    public float amountAdd;
+    public float finalCaloriesGained;
     public float harvestPercent;
     public float harvestPercentByTime;
 
@@ -30,6 +34,9 @@ public class CollisionBasket : MonoBehaviour
         caloriesGained = 0;
         calorieText.text = "";
         caloriesGainedText.text = "";
+        amountAdd = 0;
+        amountSubtract = 0;
+        finalCaloriesGained = 0;
     }
 
     // Update is called once per frame
@@ -747,15 +754,21 @@ public class CollisionBasket : MonoBehaviour
     public void CalcCalories()
     {
         caloriesGained = harvestPercent * averageCaloriesPerObject;
-        totalCalories += caloriesGained;
-        caloriesGainedText.text = "Calories gained: " + caloriesGained;
+        amountSubtract = caloriesGained * seasonManager.percentLoss;
+        amountAdd = caloriesGained * seasonManager.percentGain;
+        finalCaloriesGained = caloriesGained + (amountAdd - amountSubtract);
+        totalCalories += finalCaloriesGained;
+        caloriesGainedText.text = "Calories gained: " + finalCaloriesGained;
     }
 
     public void CalcCaloriesOffMonths()
     {
         caloriesGained = harvestPercentByTime * averageCaloriesPerObject;
-        totalCalories += caloriesGained;
-        caloriesGainedText.text = "Calories gained: " + caloriesGained;
+        amountSubtract = caloriesGained * seasonManager.percentLoss;
+        amountAdd = caloriesGained * seasonManager.percentGain;
+        finalCaloriesGained = caloriesGained + (amountAdd - amountSubtract);
+        totalCalories += finalCaloriesGained;
+        caloriesGainedText.text = "Calories gained: " + finalCaloriesGained;
     }
 
     public void CountDownTimer()
