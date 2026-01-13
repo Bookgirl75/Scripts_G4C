@@ -7,9 +7,9 @@ public class ScenesManager : MonoBehaviour
     {
         homePage,
         creditsPage,
-        selectPage,
+        scenePage,
         controlsPage,
-        fam1PlantingScene,
+        plantingScene,
         resultsScene,
     }
 
@@ -28,9 +28,9 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(Scenes.creditsPage.ToString());
     }
 
-    public void LoadSelect()
+    public void LoadSceneCut()
     {
-        SceneManager.LoadScene(Scenes.selectPage.ToString());
+        SceneManager.LoadScene(Scenes.scenePage.ToString());
     }
 
     public void LoadControls()
@@ -38,9 +38,9 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(Scenes.controlsPage.ToString());
     }
 
-    public void LoadFamilyOnePlanting()
+    public void LoadPlanting()
     {
-        SceneManager.LoadScene(Scenes.fam1PlantingScene.ToString());
+        SceneManager.LoadScene(Scenes.plantingScene.ToString());
     }
 
     public void LoadGameResults()
