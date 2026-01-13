@@ -2,6 +2,26 @@ using UnityEngine;
 
 public class Collision4Planting : MonoBehaviour
 {
+    public MouseClickController peaMouseClick;
+    public MouseClickController pepperMouseClick;
+    public MouseClickController potatoMouseClick;
+    public MouseClickController lettuceMouseClick;
+    public MouseClickController cucMouseClick;
+    public MouseClickController carrotMouseClick;
+    public MouseClickController tomatoMouseClick;
+    public MouseClickController onionMouseClick;
+    public MouseClickController pumpkinMouseClick;
+    public MouseClickController turnipMouseClick;
+    public MouseClickController pintoMouseClick;
+    public MouseClickController greenBeanMouseClick;
+    public MouseClickController broccoliMouseClick;
+    public MouseClickController celeryMouseClick;
+    public MouseClickController brusselMouseClick;
+    public MouseClickController kaleMouseClick;
+    public MouseClickController cabbageMouseClick;
+    public MouseClickController squashMouseClick;
+    public MouseClickController cornMouseClick;
+
     public bool peasReady = false;
     public bool carrotsReady = false;
     public bool peppersReady = false;
@@ -43,6 +63,8 @@ public class Collision4Planting : MonoBehaviour
     public int brusselsInGarden = 0;
     public int kalesInGarden = 0;
     public int cabbagesInGarden = 0;
+
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -61,116 +83,178 @@ public class Collision4Planting : MonoBehaviour
 
         if (collision.gameObject.CompareTag("pea"))
         {
-            peasReady = true;
             peasInGarden++;
+
+            if (peaMouseClick.allPeas == peasInGarden)
+            {
+                peasReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("carrot"))
         {
-            carrotsReady = true;
             carrotsInGarden++;
+
+            if (carrotMouseClick.allCarrots == carrotsInGarden)
+            {
+                carrotsReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("bellPepper"))
         {
-            peppersReady = true;
             peppersInGarden++;
+
+            if (pepperMouseClick.allPeppers == peppersInGarden)
+            {
+                peppersReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("potato"))
         {
-            potatoesReady = true;
             potatoesInGarden++;
+
+            if (potatoMouseClick.allPotatoes == potatoesInGarden)
+            {
+                potatoesReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("lettuce"))
         {
-            lettucesReady = true;
             lettucesInGarden++;
+
+            if (lettuceMouseClick.allLettuces == lettucesInGarden)
+            {
+                lettucesReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("cucumber"))
         {
-            cucsReady = true;
             cucsInGarden++;
+            if (cucMouseClick.allCucs == cucsInGarden)
+            {
+                cucsReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("onion"))
         {
-            onionsReady = true;
             onionsInGarden++;
+            if (onionMouseClick.allOnions == onionsInGarden)
+            {
+                onionsReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("squash"))
         {
-            squashesReady = true;
             squashesInGarden++;
+            if (squashMouseClick.allSquashes == squashesInGarden)
+            {
+                squashesReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("corn"))
         {
-            cornsReady = true;
             cornsInGarden++;
+            if (cornMouseClick.allCorns == cornsInGarden)
+            {
+                cornsReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("pumpkin"))
         {
-            pumpkinsReady = true;
             pumpkinsInGarden++;
+            if (pumpkinMouseClick.allPumpkins == pumpkinsInGarden)
+            {
+                pumpkinsReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("turnip"))
         {
-            turnipsReady = true;
             turnipsInGarden++;
+            if (turnipMouseClick.allTurnips == turnipsInGarden)
+            {
+                turnipsReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("tomato"))
         {
-            tomatoesReady = true;
             tomatoesInGarden++;
+            if (tomatoMouseClick.allTomatoes == tomatoesInGarden)
+            {
+                tomatoesReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("pintoBean"))
         {
-            pintosReady = true;
             pintosInGarden++;
+            if (pintoMouseClick.allPintos == pintosInGarden)
+            {
+                pintosReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("greenBean"))
         {
-            greenBeansReady = true;
             greenBeansInGarden++;
+            if (greenBeanMouseClick.allGreenBeans == greenBeansInGarden)
+            {
+                greenBeansReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("broccoli"))
         {
-            broccoliesReady = true;
             broccoliesInGarden++;
+            if (broccoliMouseClick.allBroccolies == broccoliesInGarden)
+            {
+                broccoliesReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("celery"))
         {
-            celeriesReady = true;
             celeriesInGarden++;
+            if (celeryMouseClick.allCeleries == celeriesInGarden)
+            {
+                celeriesReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("brusselSprout"))
         {
-            brusselsReady = true;
             brusselsInGarden++;
+            if (brusselMouseClick.allBrussels == brusselsInGarden)
+            {
+                brusselsReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("kale"))
         {
-            kalesReady = true;
             kalesInGarden++;
+            if (kaleMouseClick.allKales == kalesInGarden)
+            {
+                kalesReady = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("cabbage"))
         {
-            cabbagesReady = true;
             cabbagesInGarden++;
+            if (cabbageMouseClick.allCabbages == cabbagesInGarden)
+            {
+                cabbagesReady = true;
+            }
         }
     }
 
@@ -182,172 +266,115 @@ public class Collision4Planting : MonoBehaviour
         if (collision.gameObject.CompareTag("pea"))
         {
             peasInGarden--;
-            if (peasInGarden == 0)
-            {
-                peasReady = false;
-            }
+            peasReady = false;
         }
 
         if (collision.gameObject.CompareTag("carrot"))
         {
             carrotsInGarden--;
-            if (carrotsInGarden == 0)
-            {
-                carrotsReady = false;
-            }
+            carrotsReady = false;
         }
 
         if (collision.gameObject.CompareTag("bellPepper"))
         {
             peppersInGarden--;
-            if (peppersInGarden == 0)
-            {
-                peppersReady = false;
-            }
+            peppersReady = false;
         }
 
         if (collision.gameObject.CompareTag("potato"))
         {
             potatoesInGarden--;
-            if (potatoesInGarden == 0)
-            {
-                potatoesReady = false;
-            }
+            potatoesReady = false;
         }
 
         if (collision.gameObject.CompareTag("lettuce"))
         {
             lettucesInGarden--;
-            if (lettucesInGarden == 0)
-            {
-                lettucesReady = false;
-            }
+            lettucesReady = false;
         }
 
         if (collision.gameObject.CompareTag("cucumber"))
         {
             cucsInGarden--;
-            if (cucsInGarden == 0)
-            {
-                cucsReady = false;
-            }
+            cucsReady = false;
         }
 
         if (collision.gameObject.CompareTag("onion"))
         {
             onionsInGarden--;
-            if (onionsInGarden == 0)
-            {
-                onionsReady = false;
-            }
+            onionsReady = false;
         }
 
         if (collision.gameObject.CompareTag("squash"))
         {
             squashesInGarden--;
-            if (squashesInGarden == 0)
-            {
-                squashesReady = false;
-            }
+            squashesReady = false;
         }
 
         if (collision.gameObject.CompareTag("corn"))
         {
             cornsInGarden--;
-            if (cornsInGarden == 0)
-            {
-                cornsReady = false;
-            }
+            cornsReady = false;
         }
 
         if (collision.gameObject.CompareTag("pumpkin"))
         {
             pumpkinsInGarden--;
-            if (pumpkinsInGarden == 0)
-            {
-                pumpkinsReady = false;
-            }
+            pumpkinsReady = false;
         }
 
         if (collision.gameObject.CompareTag("turnip"))
         {
             turnipsInGarden--;
-            if (turnipsInGarden == 0)
-            {
-                turnipsReady = false;
-            }
+            turnipsReady = false;
         }
 
         if (collision.gameObject.CompareTag("tomato"))
         {
             tomatoesInGarden--;
-            if (tomatoesInGarden == 0)
-            {
-                tomatoesReady = false;
-            }
+            tomatoesReady = false;
         }
 
         if (collision.gameObject.CompareTag("pintoBean"))
         {
             pintosInGarden--;
-            if (pintosInGarden == 0)
-            {
-                pintosReady = false;
-            }
+            pintosReady = false;
         }
 
         if (collision.gameObject.CompareTag("greenBean"))
         {
             greenBeansInGarden--;
-            if (greenBeansInGarden == 0)
-            {
-                greenBeansReady = false;
-            }
+            greenBeansReady = false;
         }
 
         if (collision.gameObject.CompareTag("broccoli"))
         {
             broccoliesInGarden--;
-            if (broccoliesInGarden == 0)
-            {
-                broccoliesReady = false;
-            }
+            broccoliesReady = false;
         }
 
         if (collision.gameObject.CompareTag("celery"))
         {
             celeriesInGarden--;
-            if (celeriesInGarden == 0)
-            {
-                celeriesReady = false;
-            }
+            celeriesReady = false;
         }
 
         if (collision.gameObject.CompareTag("brusselSprout"))
         {
             brusselsInGarden--;
-            if (brusselsInGarden == 0)
-            {
-                brusselsReady = false;
-            }
+            brusselsReady = false;
         }
 
         if (collision.gameObject.CompareTag("kale"))
         {
             kalesInGarden--;
-            if (kalesInGarden == 0)
-            {
-                kalesReady = false;
-            }
+            kalesReady = false;
         }
 
         if (collision.gameObject.CompareTag("cabbage"))
         {
             cabbagesInGarden--;
-            if (cabbagesInGarden == 0)
-            {
-                cabbagesReady = false;
-            }
+            cabbagesReady = false;
         }
     }
 }

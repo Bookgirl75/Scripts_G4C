@@ -36,6 +36,26 @@ public class SeasonManager : MonoBehaviour
     public GameObject kalePacket;
     public GameObject cabbagePacket;
 
+    public MouseClickController peaMouseClick;
+    public MouseClickController pepperMouseClick;
+    public MouseClickController potatoMouseClick;
+    public MouseClickController lettuceMouseClick;
+    public MouseClickController cucMouseClick;
+    public MouseClickController carrotMouseClick;
+    public MouseClickController tomatoMouseClick;
+    public MouseClickController onionMouseClick;
+    public MouseClickController pumpkinMouseClick;
+    public MouseClickController turnipMouseClick;
+    public MouseClickController pintoMouseClick;
+    public MouseClickController greenBeanMouseClick;
+    public MouseClickController broccoliMouseClick;
+    public MouseClickController celeryMouseClick;
+    public MouseClickController brusselMouseClick;
+    public MouseClickController kaleMouseClick;
+    public MouseClickController cabbageMouseClick;
+    public MouseClickController squashMouseClick;
+    public MouseClickController cornMouseClick;
+
     public GameObject eventButton;
     public GameObject plantButtonButton;
 
@@ -189,98 +209,98 @@ public class SeasonManager : MonoBehaviour
         ResetText();
         CheckGoodAndBad();
 
-        if (plantButton.peaPlanted == true)
+        if ((plantButton.peaPlanted == true) && (peaMouseClick.allPeas == collision4Planting.peasInGarden))
         {
             growthController.peaMonthsCounted = growthController.peaMonthsCounted + 1;
             growthController.peaSpriteStart = growthController.peaMonthsCounted + 1;
             growthController.GrowPeaSprite();
         }
 
-        if (plantButton.carrotPlanted == true)
+        if ((plantButton.carrotPlanted == true) && (carrotMouseClick.allCarrots == collision4Planting.carrotsInGarden))
         {
             growthController.carrotMonthsCounted = growthController.carrotMonthsCounted + 1;
             growthController.carrotSpriteStart = growthController.carrotMonthsCounted + 1;
             growthController.GrowCarrotSprite();
         }
 
-        if (plantButton.pepperPlanted == true)
+        if ((plantButton.pepperPlanted == true) && (pepperMouseClick.allPeppers == collision4Planting.peppersInGarden))
         {
             growthController.pepperMonthsCounted = growthController.pepperMonthsCounted + 1;
             growthController.pepperSpriteStart = growthController.pepperMonthsCounted + 1;
             growthController.GrowPepperSprite();
         }
 
-        if (plantButton.potatoPlanted == true)
+        if ((plantButton.potatoPlanted == true) && (potatoMouseClick.allPotatoes == collision4Planting.potatoesInGarden))
         {
             growthController.potatoMonthsCounted = growthController.potatoMonthsCounted + 1;
             growthController.potatoSpriteStart = growthController.potatoMonthsCounted + 1;
             growthController.GrowPotatoSprite();
         }
 
-        if (plantButton.lettucePlanted == true)
+        if ((plantButton.lettucePlanted == true) && (lettuceMouseClick.allLettuces == collision4Planting.lettucesInGarden))
         {
             growthController.lettuceMonthsCounted = growthController.lettuceMonthsCounted + 1;
             growthController.lettuceSpriteStart = growthController.lettuceMonthsCounted + 1;
             growthController.GrowLettuceSprite();
         }
 
-        if (plantButton.cucPlanted == true)
+        if ((plantButton.cucPlanted == true) && (cucMouseClick.allCucs == collision4Planting.cucsInGarden))
         {
             growthController.cucMonthsCounted = growthController.cucMonthsCounted + 1;
             growthController.cucSpriteStart = growthController.cucMonthsCounted + 1;
             growthController.GrowCucSprite();
         }
 
-        if (plantButton.onionPlanted == true)
+        if ((plantButton.onionPlanted == true) && (onionMouseClick.allOnions == collision4Planting.onionsInGarden))
         {
             growthController.onionMonthsCounted = growthController.onionMonthsCounted + 1;
             growthController.onionSpriteStart = growthController.onionMonthsCounted + 1;
             growthController.GrowOnionSprite();
         }
 
-        if (plantButton.squashPlanted == true)
+        if ((plantButton.squashPlanted == true) && (squashMouseClick.allSquashes == collision4Planting.squashesInGarden))
         {
             growthController.squashMonthsCounted = growthController.squashMonthsCounted + 1;
             growthController.squashSpriteStart = growthController.squashMonthsCounted + 1;
             growthController.GrowSquashSprite();
         }
 
-        if (plantButton.cornPlanted == true)
+        if ((plantButton.cornPlanted == true) && (cornMouseClick.allCorns == collision4Planting.cornsInGarden))
         {
             growthController.cornMonthsCounted = growthController.cornMonthsCounted + 1;
             growthController.cornSpriteStart = growthController.cornMonthsCounted + 1;
             growthController.GrowCornSprite();
         }
 
-        if (plantButton.pumpkinPlanted == true)
+        if ((plantButton.pumpkinPlanted == true) && (pumpkinMouseClick.allPumpkins == collision4Planting.pumpkinsInGarden))
         {
             growthController.pumpkinMonthsCounted = growthController.pumpkinMonthsCounted + 1;
             growthController.pumpkinSpriteStart = growthController.pumpkinMonthsCounted + 1;
             growthController.GrowPumpkinSprite();
         }
 
-        if (plantButton.turnipPlanted == true)
+        if ((plantButton.turnipPlanted == true) && (turnipMouseClick.allTurnips == collision4Planting.turnipsInGarden))
         {
             growthController.turnipMonthsCounted = growthController.turnipMonthsCounted + 1;
             growthController.turnipSpriteStart = growthController.turnipMonthsCounted + 1;
             growthController.GrowTurnipSprite();
         }
 
-        if (plantButton.tomatoPlanted == true)
+        if ((plantButton.tomatoPlanted == true) && (tomatoMouseClick.allTomatoes == collision4Planting.tomatoesInGarden))
         {
             growthController.tomatoMonthsCounted = growthController.tomatoMonthsCounted + 1;
             growthController.tomatoSpriteStart = growthController.tomatoMonthsCounted + 1;
             growthController.GrowTomatoSprite();
         }
 
-        if (plantButton.pintoPlanted == true)
+        if ((plantButton.pintoPlanted == true) && (pintoMouseClick.allPintos == collision4Planting.pintosInGarden))
         {
             growthController.pintoMonthsCounted = growthController.pintoMonthsCounted + 1;
             growthController.pintoSpriteStart = growthController.pintoMonthsCounted + 1;
             growthController.GrowPintoSprite();
         }
 
-        if (plantButton.greenBeanPlanted == true)
+        if ((plantButton.greenBeanPlanted == true) && (greenBeanMouseClick.allGreenBeans == collision4Planting.greenBeansInGarden))
         {
             growthController.greenBeanMonthsCounted = growthController.greenBeanMonthsCounted + 1;
             growthController.greenBeanSpriteStart = growthController.greenBeanMonthsCounted + 1;
@@ -288,35 +308,35 @@ public class SeasonManager : MonoBehaviour
         }
 
 
-        if (plantButton.broccoliPlanted == true)
+        if ((plantButton.broccoliPlanted == true) && (broccoliMouseClick.allBroccolies == collision4Planting.broccoliesInGarden))
         {
             growthController.broccoliMonthsCounted = growthController.broccoliMonthsCounted + 1;
             growthController.broccoliSpriteStart = growthController.broccoliMonthsCounted + 1;
             growthController.GrowBroccoliSprite();
         }
 
-        if (plantButton.celeryPlanted == true)
+        if ((plantButton.celeryPlanted == true) && (celeryMouseClick.allCeleries == collision4Planting.celeriesInGarden))
         {
             growthController.celeryMonthsCounted = growthController.celeryMonthsCounted + 1;
             growthController.celerySpriteStart = growthController.celeryMonthsCounted + 1;
             growthController.GrowCelerySprite();
         }
 
-        if (plantButton.brusselPlanted == true)
+        if ((plantButton.brusselPlanted == true) && (brusselMouseClick.allBrussels == collision4Planting.brusselsInGarden))
         {
             growthController.brusselMonthsCounted = growthController.brusselMonthsCounted + 1;
             growthController.brusselSpriteStart = growthController.brusselMonthsCounted + 1;
             growthController.GrowBrusselSprite();
         }
 
-        if (plantButton.kalePlanted == true)
+        if ((plantButton.kalePlanted == true) && (kaleMouseClick.allKales == collision4Planting.kalesInGarden))
         {
             growthController.kaleMonthsCounted = growthController.kaleMonthsCounted + 1;
             growthController.kaleSpriteStart = growthController.kaleMonthsCounted + 1;
             growthController.GrowKaleSprite();
         }
 
-        if (plantButton.cabbagePlanted == true)
+        if ((plantButton.cabbagePlanted == true) && (cabbageMouseClick.allCabbages == collision4Planting.cabbagesInGarden))
         {
             growthController.cabbageMonthsCounted = growthController.cabbageMonthsCounted + 1;
             growthController.cabbageSpriteStart = growthController.cabbageMonthsCounted + 1;
