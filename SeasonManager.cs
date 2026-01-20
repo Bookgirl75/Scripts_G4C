@@ -96,6 +96,12 @@ public class SeasonManager : MonoBehaviour
         badThing = (UnityEngine.Random.Range(0, 13));
         goodThing = (UnityEngine.Random.Range(0, 13));
 
+        if (goodThing == badThing)
+        {
+            badThing = (UnityEngine.Random.Range(0, 13));
+            goodThing = (UnityEngine.Random.Range(0, 13));
+        }
+
         CheckGoodAndBad();
     }
 

@@ -45,14 +45,14 @@ public class MouseClickController : MonoBehaviour
     public int allKales;
     public int allCabbages;
 
-    public float dataTimer = 1;
+    public float dataTimer = 2;
 
     public bool textOn = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        seedText.text = "";
     }
 
     // Update is called once per frame
@@ -91,98 +91,152 @@ public class MouseClickController : MonoBehaviour
                 {
                     allPeas++;
 
-                    seedText.text = "Pea seeds:" + allPeas;
+                    seedText.text = "Pea seeds: " + allPeas;
                     textOn = true;
                 }
 
                 else if (seeds.tag == "bellPepper")
                 {
                     allPeppers++;
+
+                    seedText.text = "Pepper starts: " + allPeppers;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "potato")
                 {
                     allPotatoes++;
+
+                    seedText.text = "Potato tubers: " + allPotatoes;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "lettuce")
                 {
-                    allPeppers++;
+                    allLettuces++;
+
+                    seedText.text = "Lettuce seeds: " + allLettuces;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "cucumber")
                 {
                     allCucs++;
+
+                    seedText.text = "Cucumber seeds: " + allCucs;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "carrot")
                 {
                     allCarrots++;
+
+                    seedText.text = "Carrot seeds: " + allCarrots;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "tomato")
                 {
                     allTomatoes++;
+
+                    seedText.text = "Tomato starts: " + allTomatoes;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "onion")
                 {
                     allOnions++;
+
+                    seedText.text = "Onion seeds: " + allOnions;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "squash")
                 {
                     allSquashes++;
+
+                    seedText.text = "Squash seeds: " + allSquashes;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "corn")
                 {
                     allCorns++;
+
+                    seedText.text = "Corn seeds: " + allCorns;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "pumpkin")
                 {
                     allPumpkins++;
+
+                    seedText.text = "Pumpkin seeds: " + allPumpkins;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "turnip")
                 {
                     allTurnips++;
+
+                    seedText.text = "Turnip seeds: " + allTurnips;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "pintoBean")
                 {
                     allPintos++;
+
+                    seedText.text = "Pinto bean seeds: " + allPintos;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "greenBean")
                 {
                     allGreenBeans++;
+
+                    seedText.text = "Green bean seeds: " + allGreenBeans;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "broccoli")
                 {
                     allBroccolies++;
+
+                    seedText.text = "Broccoli seeds: " + allBroccolies;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "celery")
                 {
                     allCeleries++;
+
+                    seedText.text = "Celery starts: " + allCeleries;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "brusselSprout")
                 {
                     allBrussels++;
+
+                    seedText.text = "Brussel sprout seeds: " + allBrussels;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "kale")
                 {
                     allKales++;
+
+                    seedText.text = "Kale starts: " + allKales;
+                    textOn = true;
                 }
 
                 else if (seeds.tag == "cabbage")
                 {
                     allCabbages++;
+
+                    seedText.text = "Cabbage seeds: " + allCabbages;
+                    textOn = true;
                 }
             }
         }

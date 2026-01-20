@@ -17,7 +17,8 @@ public class CollisionBasket : MonoBehaviour
 
     public float dataTimer = 1;
 
-    public float totalCalories;
+    public static float totalCalories;
+
     public float caloriesGained;
     public float amountSubtract;
     public float amountAdd;
