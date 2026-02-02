@@ -750,6 +750,85 @@ public class CollisionBasket : MonoBehaviour
                 }
             }
         }
+
+        if (collision.gameObject.CompareTag("eggplant"))
+        {
+            if (plantButton.eggplantPlanted == true)
+            {
+                averageCaloriesPerObject = 96;
+                averageHarvest = 35;
+                harvestPercent = (growthController.eggplantPlantTiming) * (averageHarvest);
+
+                Destroy(collision.gameObject);
+                collision4Planting.plantsInGarden--;
+
+                textOn = true;
+
+                if (growthController.eggplantMonthsCounted == 2)
+                {
+                    CalcCalories();
+                }
+
+                if (growthController.eggplantMonthsCounted == 3)
+                {
+                    CalcCalories();
+                }
+
+                else if (growthController.eggplantMonthsCounted == 4)
+                {
+                    harvestPercentByTime = harvestPercent * .8f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else if (growthController.eggplantMonthsCounted == 1)
+                {
+                    harvestPercentByTime = harvestPercent * .6f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else
+                {
+                    caloriesGainedText.text = "Calories gained: 0";
+                }
+            }
+        }
+
+        if (collision.gameObject.CompareTag("mustardGreens"))
+        {
+            if (plantButton.mustardGreensPlanted == true)
+            {
+                averageCaloriesPerObject = 140;
+                averageHarvest = 10;
+                harvestPercent = (growthController.mustardGreensPlantTiming) * (averageHarvest);
+
+                Destroy(collision.gameObject);
+                collision4Planting.plantsInGarden--;
+
+                textOn = true;
+
+                if (growthController.mustardGreensMonthsCounted == 1)
+                {
+                    CalcCalories();
+                }
+
+                if (growthController.mustardGreensMonthsCounted == 2)
+                {
+                    CalcCalories();
+                }
+
+                else if (growthController.mustardGreensMonthsCounted == 3)
+                {
+                    harvestPercentByTime = harvestPercent * .8f;
+                    CalcCaloriesOffMonths();
+                }
+
+                else
+                {
+                    caloriesGainedText.text = "Calories gained: 0";
+                }
+            }
+        }
+
     }
 
     public void CalcCalories()

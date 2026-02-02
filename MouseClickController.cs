@@ -44,6 +44,8 @@ public class MouseClickController : MonoBehaviour
     public int allBrussels;
     public int allKales;
     public int allCabbages;
+    public int allEggplants;
+    public int allMustardGreens;
 
     public float dataTimer = 2;
 
@@ -236,6 +238,22 @@ public class MouseClickController : MonoBehaviour
                     allCabbages++;
 
                     seedText.text = "Cabbage seeds: " + allCabbages;
+                    textOn = true;
+                }
+
+                else if (seeds.tag == "eggplant")
+                {
+                    allEggplants++;
+
+                    seedText.text = "Eggplant starts: " + allEggplants;
+                    textOn = true;
+                }
+
+                else if (seeds.tag == "mustardGreens")
+                {
+                    allMustardGreens++;
+
+                    seedText.text = "Mustard greens seeds: " + allMustardGreens;
                     textOn = true;
                 }
             }

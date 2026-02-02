@@ -24,6 +24,8 @@ public class PlantButton : MonoBehaviour
     public GameObject brusselPacket;
     public GameObject kalePacket;
     public GameObject cabbagePacket;
+    public GameObject eggplantPacket;
+    public GameObject mustardGreensPacket;
 
     public bool peaPlanted = false;
     public bool carrotPlanted = false;
@@ -44,6 +46,8 @@ public class PlantButton : MonoBehaviour
     public bool brusselPlanted = false;
     public bool kalePlanted = false;
     public bool cabbagePlanted = false;
+    public bool eggplantPlanted = false;
+    public bool mustardGreensPlanted = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -192,5 +196,18 @@ public class PlantButton : MonoBehaviour
             Destroy(cabbagePacket);
         }
 
+        if ((plantCollision.eggplantsReady == true) & (eggplantPlanted == false))
+        {
+            growthController.PlantEggplant();
+            eggplantPlanted = true;
+            Destroy(eggplantPacket);
+        }
+
+        if ((plantCollision.mustardGreensReady == true) & (mustardGreensPlanted == false))
+        {
+            growthController.PlantMustardGreens();
+            mustardGreensPlanted = true;
+            Destroy(mustardGreensPacket);
+        }
     }
 }

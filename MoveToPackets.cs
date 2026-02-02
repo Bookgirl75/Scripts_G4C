@@ -19,7 +19,7 @@ public class MoveToPackets : MonoBehaviour
     public float distanceThere = 50;
     public float distanceBack = -50;
 
-    public int totalPeas;
+    
     public bool inGarden = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,8 +31,7 @@ public class MoveToPackets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        peaNumber = GameObject.FindGameObjectsWithTag("pea");
-
+       
         mousePosition = Input.mousePosition;
 
         Ray mouseRay = Camera.main.ScreenPointToRay(mousePosition);

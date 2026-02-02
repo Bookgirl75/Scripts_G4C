@@ -35,6 +35,8 @@ public class SeasonManager : MonoBehaviour
     public GameObject brusselPacket;
     public GameObject kalePacket;
     public GameObject cabbagePacket;
+    public GameObject eggplantPacket;
+    public GameObject mustardGreensPacket;
 
     public MouseClickController peaMouseClick;
     public MouseClickController pepperMouseClick;
@@ -55,6 +57,8 @@ public class SeasonManager : MonoBehaviour
     public MouseClickController cabbageMouseClick;
     public MouseClickController squashMouseClick;
     public MouseClickController cornMouseClick;
+    public MouseClickController eggplantMouseClick;
+    public MouseClickController mustardGreensMouseClick;
 
     public GameObject eventButton;
     public GameObject plantButtonButton;
@@ -83,6 +87,8 @@ public class SeasonManager : MonoBehaviour
     [SerializeField] GameObject[] brussels;
     [SerializeField] GameObject[] kales;
     [SerializeField] GameObject[] cabbages;
+    [SerializeField] GameObject[] eggplants;
+    [SerializeField] GameObject[] mustardGreens;
 
     public float dataTimer = 3;
 
@@ -127,6 +133,8 @@ public class SeasonManager : MonoBehaviour
         brussels = GameObject.FindGameObjectsWithTag("brusselSprout");
         kales = GameObject.FindGameObjectsWithTag("kale");
         cabbages = GameObject.FindGameObjectsWithTag("cabbage");
+        eggplants = GameObject.FindGameObjectsWithTag("eggplant");
+        mustardGreens = GameObject.FindGameObjectsWithTag("mustardGreens");
 
 
         if (season == 1)
@@ -347,6 +355,20 @@ public class SeasonManager : MonoBehaviour
             growthController.cabbageMonthsCounted = growthController.cabbageMonthsCounted + 1;
             growthController.cabbageSpriteStart = growthController.cabbageMonthsCounted + 1;
             growthController.GrowCabbageSprite();
+        }
+
+        if ((plantButton.eggplantPlanted == true) && (eggplantMouseClick.allEggplants == collision4Planting.eggplantsInGarden))
+        {
+            growthController.eggplantMonthsCounted = growthController.eggplantMonthsCounted + 1;
+            growthController.eggplantSpriteStart = growthController.eggplantMonthsCounted + 1;
+            growthController.GrowEggplantSprite();
+        }
+
+        if ((plantButton.mustardGreensPlanted == true) && (mustardGreensMouseClick.allMustardGreens == collision4Planting.mustardGreensInGarden))
+        {
+            growthController.mustardGreensMonthsCounted = growthController.mustardGreensMonthsCounted + 1;
+            growthController.mustardGreensSpriteStart = growthController.mustardGreensMonthsCounted + 1;
+            growthController.GrowMustardGreensSprite();
         }
     }
 
@@ -757,6 +779,14 @@ public class SeasonManager : MonoBehaviour
         {
             Destroy(cabbage);
         }
+        foreach (GameObject eggplant in eggplants)
+        {
+            Destroy(eggplant);
+        }
+        foreach (GameObject mustardGreen in mustardGreens)
+        {
+            Destroy(mustardGreen);
+        }
 
         Destroy(peaPacket);
         Destroy(pepperPacket);
@@ -777,6 +807,8 @@ public class SeasonManager : MonoBehaviour
         Destroy(brusselPacket);
         Destroy(kalePacket);
         Destroy(cabbagePacket);
+        Destroy(eggplantPacket);
+        Destroy(mustardGreensPacket);
 
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
@@ -888,6 +920,14 @@ public class SeasonManager : MonoBehaviour
         {
             Destroy(cabbage);
         }
+        foreach (GameObject eggplant in eggplants)
+        {
+            Destroy(eggplant);
+        }
+        foreach (GameObject mustardGreen in mustardGreens)
+        {
+            Destroy(mustardGreen);
+        }
 
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
@@ -984,6 +1024,14 @@ public class SeasonManager : MonoBehaviour
         foreach (GameObject cabbage in cabbages)
         {
             Destroy(cabbage);
+        }
+        foreach (GameObject eggplant in eggplants)
+        {
+            Destroy(eggplant);
+        }
+        foreach (GameObject mustardGreen in mustardGreens)
+        {
+            Destroy(mustardGreen);
         }
     }
 

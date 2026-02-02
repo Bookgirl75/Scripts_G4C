@@ -21,6 +21,8 @@ public class Collision4Planting : MonoBehaviour
     public MouseClickController cabbageMouseClick;
     public MouseClickController squashMouseClick;
     public MouseClickController cornMouseClick;
+    public MouseClickController eggplantMouseClick;
+    public MouseClickController mustardGreensMouseClick;
 
     public bool peasReady = false;
     public bool carrotsReady = false;
@@ -41,6 +43,8 @@ public class Collision4Planting : MonoBehaviour
     public bool brusselsReady = false;
     public bool kalesReady = false;
     public bool cabbagesReady = false;
+    public bool eggplantsReady = false;
+    public bool mustardGreensReady = false;
 
     public float plantsInGarden = 0;
 
@@ -63,8 +67,9 @@ public class Collision4Planting : MonoBehaviour
     public int brusselsInGarden = 0;
     public int kalesInGarden = 0;
     public int cabbagesInGarden = 0;
+    public int eggplantsInGarden = 0;
+    public int mustardGreensInGarden = 0;
 
-   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -256,6 +261,24 @@ public class Collision4Planting : MonoBehaviour
                 cabbagesReady = true;
             }
         }
+
+        if (collision.gameObject.CompareTag("eggplant"))
+        {
+            eggplantsInGarden++;
+            if (eggplantMouseClick.allEggplants == eggplantsInGarden)
+            {
+                eggplantsReady = true;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("mustardGreens"))
+        {
+            mustardGreensInGarden++;
+            if (mustardGreensMouseClick.allMustardGreens == mustardGreensInGarden)
+            {
+                mustardGreensReady = true;
+            }
+        }
     }
 
 
@@ -375,6 +398,18 @@ public class Collision4Planting : MonoBehaviour
         {
             cabbagesInGarden--;
             cabbagesReady = false;
+        }
+
+        if (collision.gameObject.CompareTag("eggplant"))
+        {
+            eggplantsInGarden--;
+            eggplantsReady = false;
+        }
+
+        if (collision.gameObject.CompareTag("mustardGreens"))
+        {
+            mustardGreensInGarden--;
+            mustardGreensReady = false;
         }
     }
 }

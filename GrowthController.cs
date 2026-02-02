@@ -25,6 +25,8 @@ public class GrowthController : MonoBehaviour
     [SerializeField] Sprite[] brusselSprites;
     [SerializeField] Sprite[] kaleSprites;
     [SerializeField] Sprite[] cabbageSprites;
+    [SerializeField] Sprite[] eggplantSprites;
+    [SerializeField] Sprite[] mustardGreensSprites;
 
 
     [SerializeField] GameObject[] peas;
@@ -46,6 +48,8 @@ public class GrowthController : MonoBehaviour
     [SerializeField] GameObject[] brussels;
     [SerializeField] GameObject[] kales;
     [SerializeField] GameObject[] cabbages;
+    [SerializeField] GameObject[] eggplants;
+    [SerializeField] GameObject[] mustardGreens;
 
     public Sprite newSprite;
     public SeasonManager seasonManager;
@@ -158,6 +162,16 @@ public class GrowthController : MonoBehaviour
     public int cabbageBestMonth;
     public int cabbageFallBestMonth;
 
+    public int eggplantMonthsCounted;
+    public int eggplantSpriteStart;
+    public int eggplantMonthPlanted;
+    public int eggplantBestMonth;
+
+    public int mustardGreensMonthsCounted;
+    public int mustardGreensSpriteStart;
+    public int mustardGreensMonthPlanted;
+    public int mustardGreensBestMonth;
+
 
     public float peaPlantTiming;
     public float carrotPlantTiming;
@@ -178,6 +192,8 @@ public class GrowthController : MonoBehaviour
     public float brusselPlantTiming;
     public float kalePlantTiming;
     public float cabbagePlantTiming;
+    public float eggplantPlantTiming;
+    public float mustardGreensPlantTiming;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -201,8 +217,9 @@ public class GrowthController : MonoBehaviour
         brusselPlantTiming = 0;
         kalePlantTiming = 0;
         cabbagePlantTiming = 0;
-
-}
+        eggplantPlantTiming = 0;
+        mustardGreensPlantTiming = 0;
+    }
 
     // Update is called once per frame
     void Update()
@@ -226,6 +243,8 @@ public class GrowthController : MonoBehaviour
         brussels = GameObject.FindGameObjectsWithTag("brusselSprout");
         kales = GameObject.FindGameObjectsWithTag("kale");
         cabbages = GameObject.FindGameObjectsWithTag("cabbage");
+        eggplants = GameObject.FindGameObjectsWithTag("eggplant");
+        mustardGreens = GameObject.FindGameObjectsWithTag("mustardGreens");
     }
 
     public void PlantPea()
@@ -863,5 +882,70 @@ public class GrowthController : MonoBehaviour
         }
     }
 
+
+    public void PlantEggplant()
+    {
+        SetEggplantPlantedSprite();
+        eggplantMonthPlanted = seasonManager.season;
+
+        if (eggplantMonthPlanted == eggplantBestMonth)
+        {
+            eggplantPlantTiming = 1;
+        }
+
+        if ((eggplantMonthPlanted == (eggplantBestMonth + 1)) || (eggplantMonthPlanted == (eggplantBestMonth - 1)))
+        {
+            eggplantPlantTiming = .8f;
+        }
+    }
+    public void SetEggplantPlantedSprite()
+    {
+        newSprite = eggplantSprites[1];
+        foreach (GameObject eggplant in eggplants)
+        {
+            eggplant.GetComponent<SpriteRenderer>().sprite = newSprite;
+        }
+    }
+    public void GrowEggplantSprite()
+    {
+        newSprite = eggplantSprites[eggplantSpriteStart];
+        foreach (GameObject eggplant in eggplants)
+        {
+            eggplant.GetComponent<SpriteRenderer>().sprite = newSprite;
+        }
+    }
+
+
+    public void PlantMustardGreens()
+    {
+        SetMustardGreensPlantedSprite();
+        mustardGreensMonthPlanted = seasonManager.season;
+
+        if (mustardGreensMonthPlanted == mustardGreensBestMonth)
+        {
+            mustardGreensPlantTiming = 1;
+        }
+
+        if ((mustardGreensMonthPlanted == (mustardGreensBestMonth + 1)) || (mustardGreensMonthPlanted == (mustardGreensBestMonth - 1)))
+        {
+            mustardGreensPlantTiming = .8f;
+        }
+    }
+    public void SetMustardGreensPlantedSprite()
+    {
+        newSprite = mustardGreensSprites[1];
+        foreach (GameObject mustardGreen in mustardGreens)
+        {
+            mustardGreen.GetComponent<SpriteRenderer>().sprite = newSprite;
+        }
+    }
+    public void GrowMustardGreensSprite()
+    {
+        newSprite = mustardGreensSprites[mustardGreensSpriteStart];
+        foreach (GameObject mustardGreen in mustardGreens)
+        {
+            mustardGreen.GetComponent<SpriteRenderer>().sprite = newSprite;
+        }
+    }
 }
 
