@@ -6,6 +6,8 @@ using static Unity.Burst.Intrinsics.Arm;
 
 public class GrowthController : MonoBehaviour
 {
+    public SpriteRenderer potatoSpriteRenderer;
+
     [SerializeField] Sprite[] peaSprites;
     [SerializeField] Sprite[] carrotSprites;
     [SerializeField] Sprite[] pepperSprites;
@@ -53,7 +55,8 @@ public class GrowthController : MonoBehaviour
 
     public Sprite newSprite;
     public SeasonManager seasonManager;
-    
+
+    public Vector2 newPotatoSize = new Vector2(50f, 50f);
 
     public int peaMonthsCounted;
     public int peaSpriteStart;
@@ -366,6 +369,7 @@ public class GrowthController : MonoBehaviour
     public void SetPotatoPlantedSprite()
     {
         newSprite = potatoSprites[1];
+
         foreach (GameObject potato in potatoes)
         {
             potato.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -377,6 +381,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject potato in potatoes)
         {
             potato.GetComponent<SpriteRenderer>().sprite = newSprite;
+            potatoSpriteRenderer = potato.GetComponent<SpriteRenderer>();
+            potatoSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            potatoSpriteRenderer.size = newPotatoSize;
         }
     }
 
