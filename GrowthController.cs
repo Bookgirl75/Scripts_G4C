@@ -6,6 +6,13 @@ using static Unity.Burst.Intrinsics.Arm;
 
 public class GrowthController : MonoBehaviour
 {
+
+    public SpriteRenderer peaSpriteRenderer;
+    public SpriteRenderer carrotSpriteRenderer;
+    public SpriteRenderer pepperSpriteRenderer;
+    public SpriteRenderer potatoSpriteRenderer;
+    public SpriteRenderer lettuceSpriteRenderer;
+    public SpriteRenderer cucSpriteRenderer;
     public SpriteRenderer potatoSpriteRenderer;
 
     [SerializeField] Sprite[] peaSprites;
