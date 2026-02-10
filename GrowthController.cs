@@ -13,7 +13,21 @@ public class GrowthController : MonoBehaviour
     public SpriteRenderer potatoSpriteRenderer;
     public SpriteRenderer lettuceSpriteRenderer;
     public SpriteRenderer cucSpriteRenderer;
-    public SpriteRenderer potatoSpriteRenderer;
+    public SpriteRenderer onionSpriteRenderer;
+    public SpriteRenderer squashSpriteRenderer;
+    public SpriteRenderer cornSpriteRenderer;
+    public SpriteRenderer pumpkinSpriteRenderer;
+    public SpriteRenderer turnipSpriteRenderer;
+    public SpriteRenderer tomatoSpriteRenderer;
+    public SpriteRenderer pintoSpriteRenderer;
+    public SpriteRenderer greenBeanSpriteRenderer;
+    public SpriteRenderer broccoliSpriteRenderer;
+    public SpriteRenderer celerySpriteRenderer;
+    public SpriteRenderer brusselSpriteRenderer;
+    public SpriteRenderer kaleSpriteRenderer;
+    public SpriteRenderer cabbageSpriteRenderer;
+    public SpriteRenderer eggplantSpriteRenderer;
+    public SpriteRenderer mustardGreensSpriteRenderer;
 
     [SerializeField] Sprite[] peaSprites;
     [SerializeField] Sprite[] carrotSprites;
@@ -63,7 +77,27 @@ public class GrowthController : MonoBehaviour
     public Sprite newSprite;
     public SeasonManager seasonManager;
 
-    public Vector2 newPotatoSize = new Vector2(50f, 50f);
+    public Vector2 newPeaSize = new Vector2(1f, 1f);
+    public Vector2 newCarrotSize = new Vector2(1f, 1f);
+    public Vector2 newPepperSize = new Vector2(1f, 1f);
+    public Vector2 newPotatoSize = new Vector2(1f, 1f);
+    public Vector2 newLettuceSize = new Vector2(1f, 1f);
+    public Vector2 newCucSize = new Vector2(1f, 1f);
+    public Vector2 newOnionSize = new Vector2(1f, 1f);
+    public Vector2 newCornSize = new Vector2(1f, 1f);
+    public Vector2 newSquashSize = new Vector2(1f, 1f);
+    public Vector2 newTurnipSize = new Vector2(1f, 1f);
+    public Vector2 newTomatoSize = new Vector2(1f, 1f);
+    public Vector2 newPintoSize = new Vector2(1f, 1f);
+    public Vector2 newGreenBeanSize = new Vector2(1f, 1f);
+    public Vector2 newBroccoliSize = new Vector2(1f, 1f);
+    public Vector2 newCelerySize = new Vector2(1f, 1f);
+    public Vector2 newKaleSize = new Vector2(1f, 1f);
+    public Vector2 newPumpkinSize = new Vector2(1f, 1f);
+    public Vector2 newCabbageSize = new Vector2(1f, 1f);
+    public Vector2 newEggplantSize = new Vector2(1f, 1f);
+    public Vector2 newBrusselSize = new Vector2(1f, 1f);
+    public Vector2 newMustardGreensSize = new Vector2(1f, 1f);
 
     public int peaMonthsCounted;
     public int peaSpriteStart;
@@ -287,6 +321,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject pea in peas)
         {
             pea.GetComponent<SpriteRenderer>().sprite = newSprite;
+            peaSpriteRenderer = pea.GetComponent<SpriteRenderer>();
+            peaSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            peaSpriteRenderer.size = newPeaSize;
         }
     }
 
@@ -321,6 +358,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject carrot in carrots)
         {
             carrot.GetComponent<SpriteRenderer>().sprite = newSprite;
+            carrotSpriteRenderer = carrot.GetComponent<SpriteRenderer>();
+            carrotSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            carrotSpriteRenderer.size = newCarrotSize;
         }
     }
 
@@ -354,6 +394,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject pepper in peppers)
         {
             pepper.GetComponent<SpriteRenderer>().sprite = newSprite;
+            pepperSpriteRenderer = pepper.GetComponent<SpriteRenderer>();
+            pepperSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            pepperSpriteRenderer.size = newPepperSize;
         }
     }
 
@@ -425,6 +468,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject lettuce in lettuces)
         {
             lettuce.GetComponent<SpriteRenderer>().sprite = newSprite;
+            lettuceSpriteRenderer = lettuce.GetComponent<SpriteRenderer>();
+            lettuceSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            lettuceSpriteRenderer.size = newLettuceSize;
         }
     }
 
@@ -458,6 +504,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject cuc in cucs)
         {
             cuc.GetComponent<SpriteRenderer>().sprite = newSprite;
+            cucSpriteRenderer = cuc.GetComponent<SpriteRenderer>();
+            cucSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            cucSpriteRenderer.size = newCucSize;
         }
     }
 
@@ -492,6 +541,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject onion in onions)
         {
             onion.GetComponent<SpriteRenderer>().sprite = newSprite;
+            onionSpriteRenderer = onion.GetComponent<SpriteRenderer>();
+            onionSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            onionSpriteRenderer.size = newOnionSize;
         }
     }
 
@@ -526,6 +578,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject squash in squashes)
         {
             squash.GetComponent<SpriteRenderer>().sprite = newSprite;
+            squashSpriteRenderer = squash.GetComponent<SpriteRenderer>();
+            squashSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            squashSpriteRenderer.size = newSquashSize;
         }
     }
 
@@ -559,6 +614,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject corn in corns)
         {
             corn.GetComponent<SpriteRenderer>().sprite = newSprite;
+            cornSpriteRenderer = corn.GetComponent<SpriteRenderer>();
+            cornSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            cornSpriteRenderer.size = newCornSize;
         }
     }
 
@@ -592,6 +650,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject pumpkin in pumpkins)
         {
             pumpkin.GetComponent<SpriteRenderer>().sprite = newSprite;
+            pumpkinSpriteRenderer = pumpkin.GetComponent<SpriteRenderer>();
+            pumpkinSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            pumpkinSpriteRenderer.size = newPumpkinSize;
         }
     }
 
@@ -626,6 +687,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject turnip in turnips)
         {
             turnip.GetComponent<SpriteRenderer>().sprite = newSprite;
+            turnipSpriteRenderer = turnip.GetComponent<SpriteRenderer>();
+            turnipSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            turnipSpriteRenderer.size = newTurnipSize;
         }
     }
 
@@ -659,6 +723,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject tomato in tomatoes)
         {
             tomato.GetComponent<SpriteRenderer>().sprite = newSprite;
+            tomatoSpriteRenderer = tomato.GetComponent<SpriteRenderer>();
+            tomatoSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            tomatoSpriteRenderer.size = newTomatoSize;
         }
     }
 
@@ -692,6 +759,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject pinto in pintos)
         {
             pinto.GetComponent<SpriteRenderer>().sprite = newSprite;
+            pintoSpriteRenderer = pinto.GetComponent<SpriteRenderer>();
+            pintoSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            pintoSpriteRenderer.size = newPintoSize;
         }
     }
 
@@ -725,6 +795,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject greenBean in greenBeans)
         {
             greenBean.GetComponent<SpriteRenderer>().sprite = newSprite;
+            greenBeanSpriteRenderer = greenBean.GetComponent<SpriteRenderer>();
+            greenBeanSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            greenBeanSpriteRenderer.size = newGreenBeanSize;
         }
     }
 
@@ -759,6 +832,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject broccoli in broccolies)
         {
             broccoli.GetComponent<SpriteRenderer>().sprite = newSprite;
+            broccoliSpriteRenderer = broccoli.GetComponent<SpriteRenderer>();
+            broccoliSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            broccoliSpriteRenderer.size = newBroccoliSize;
         }
     }
 
@@ -792,6 +868,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject celery in celeries)
         {
             celery.GetComponent<SpriteRenderer>().sprite = newSprite;
+            celerySpriteRenderer = celery.GetComponent<SpriteRenderer>();
+            celerySpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            celerySpriteRenderer.size = newCelerySize;
         }
     }
 
@@ -826,6 +905,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject brussel in brussels)
         {
             brussel.GetComponent<SpriteRenderer>().sprite = newSprite;
+            brusselSpriteRenderer = brussel.GetComponent<SpriteRenderer>();
+            brusselSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            brusselSpriteRenderer.size = newBrusselSize;
         }
     }
 
@@ -859,6 +941,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject kale in kales)
         {
             kale.GetComponent<SpriteRenderer>().sprite = newSprite;
+            kaleSpriteRenderer = kale.GetComponent<SpriteRenderer>();
+            kaleSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            kaleSpriteRenderer.size = newKaleSize;
         }
     }
 
@@ -893,6 +978,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject cabbage in cabbages)
         {
             cabbage.GetComponent<SpriteRenderer>().sprite = newSprite;
+            cabbageSpriteRenderer = cabbage.GetComponent<SpriteRenderer>();
+            cabbageSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            cabbageSpriteRenderer.size = newCabbageSize;
         }
     }
 
@@ -926,6 +1014,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject eggplant in eggplants)
         {
             eggplant.GetComponent<SpriteRenderer>().sprite = newSprite;
+            eggplantSpriteRenderer = eggplant.GetComponent<SpriteRenderer>();
+            eggplantSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            eggplantSpriteRenderer.size = newEggplantSize;
         }
     }
 
@@ -959,6 +1050,9 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject mustardGreen in mustardGreens)
         {
             mustardGreen.GetComponent<SpriteRenderer>().sprite = newSprite;
+            mustardGreensSpriteRenderer = mustardGreen.GetComponent<SpriteRenderer>();
+            mustardGreensSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
+            mustardGreensSpriteRenderer.size = newMustardGreensSize;
         }
     }
 }
