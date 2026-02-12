@@ -6,6 +6,7 @@ using static Unity.Burst.Intrinsics.Arm;
 
 public class GrowthController : MonoBehaviour
 {
+    public BoxCollider2D potatoBoxCollider;
 
     public SpriteRenderer peaSpriteRenderer;
     public SpriteRenderer carrotSpriteRenderer;
@@ -431,9 +432,11 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject potato in potatoes)
         {
             potato.GetComponent<SpriteRenderer>().sprite = newSprite;
+            potatoBoxCollider = potato.GetComponent<BoxCollider2D>();
             potatoSpriteRenderer = potato.GetComponent<SpriteRenderer>();
             potatoSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             potatoSpriteRenderer.size = newPotatoSize;
+            potatoBoxCollider.size = new Vector2(3f, 5f);
         }
     }
 

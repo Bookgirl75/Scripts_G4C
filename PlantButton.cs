@@ -63,6 +63,7 @@ public class PlantButton : MonoBehaviour
 
     public void ButtonPressed()
     {
+
         if ((plantCollision.peasReady == true) & (peaPlanted == false))
         {
             growthController.PlantPea();
