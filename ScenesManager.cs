@@ -48,6 +48,12 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(Scenes.resultsScene.ToString());
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("game quit");
+    }
+
     public void Update()
     {
         if (Input.GetKey(KeyCode.Escape))

@@ -6,7 +6,27 @@ using static Unity.Burst.Intrinsics.Arm;
 
 public class GrowthController : MonoBehaviour
 {
+    public BoxCollider2D peaBoxCollider;
+    public BoxCollider2D pepperBoxCollider;
     public BoxCollider2D potatoBoxCollider;
+    public BoxCollider2D lettuceBoxCollider;
+    public BoxCollider2D cucBoxCollider;
+    public BoxCollider2D carrotBoxCollider;
+    public BoxCollider2D tomatoBoxCollider;
+    public BoxCollider2D onionBoxCollider;
+    public BoxCollider2D squashBoxCollider;
+    public BoxCollider2D cornBoxCollider;
+    public BoxCollider2D pumpkinBoxCollider;
+    public BoxCollider2D turnipBoxCollider;
+    public BoxCollider2D pintoBoxCollider;
+    public BoxCollider2D greenBeanBoxCollider;
+    public BoxCollider2D broccoliBoxCollider;
+    public BoxCollider2D celeryBoxCollider;
+    public BoxCollider2D brusselBoxCollider;
+    public BoxCollider2D kaleBoxCollider;
+    public BoxCollider2D cabbageBoxCollider;
+    public BoxCollider2D eggplantBoxCollider;
+    public BoxCollider2D mustardGreenBoxCollider;
 
     public SpriteRenderer peaSpriteRenderer;
     public SpriteRenderer carrotSpriteRenderer;
@@ -99,6 +119,28 @@ public class GrowthController : MonoBehaviour
     public Vector2 newEggplantSize = new Vector2(1f, 1f);
     public Vector2 newBrusselSize = new Vector2(1f, 1f);
     public Vector2 newMustardGreensSize = new Vector2(1f, 1f);
+
+    public Vector2 newPeaBoxSize = new Vector2(1f, 1f);
+    public Vector2 newCarrotBoxSize = new Vector2(1f, 1f);
+    public Vector2 newPepperBoxSize = new Vector2(1f, 1f);
+    public Vector2 newPotatoBoxSize = new Vector2(1f, 1f);
+    public Vector2 newLettuceBoxSize = new Vector2(1f, 1f);
+    public Vector2 newCucBoxSize = new Vector2(1f, 1f);
+    public Vector2 newOnionBoxSize = new Vector2(1f, 1f);
+    public Vector2 newCornBoxSize = new Vector2(1f, 1f);
+    public Vector2 newSquashBoxSize = new Vector2(1f, 1f);
+    public Vector2 newTurnipBoxSize = new Vector2(1f, 1f);
+    public Vector2 newTomatoBoxSize = new Vector2(1f, 1f);
+    public Vector2 newPintoBoxSize = new Vector2(1f, 1f);
+    public Vector2 newGreenBeanBoxSize = new Vector2(1f, 1f);
+    public Vector2 newBroccoliBoxSize = new Vector2(1f, 1f);
+    public Vector2 newCeleryBoxSize = new Vector2(1f, 1f);
+    public Vector2 newKaleBoxSize = new Vector2(1f, 1f);
+    public Vector2 newPumpkinBoxSize = new Vector2(1f, 1f);
+    public Vector2 newCabbageBoxSize = new Vector2(1f, 1f);
+    public Vector2 newEggplantBoxSize = new Vector2(1f, 1f);
+    public Vector2 newBrusselBoxSize = new Vector2(1f, 1f);
+    public Vector2 newMustardGreensBoxSize = new Vector2(1f, 1f);
 
     public int peaMonthsCounted;
     public int peaSpriteStart;
@@ -325,6 +367,8 @@ public class GrowthController : MonoBehaviour
             peaSpriteRenderer = pea.GetComponent<SpriteRenderer>();
             peaSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             peaSpriteRenderer.size = newPeaSize;
+            peaBoxCollider = pea.GetComponent<BoxCollider2D>();
+            peaBoxCollider.size = newPeaBoxSize;
         }
     }
 
@@ -362,6 +406,8 @@ public class GrowthController : MonoBehaviour
             carrotSpriteRenderer = carrot.GetComponent<SpriteRenderer>();
             carrotSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             carrotSpriteRenderer.size = newCarrotSize;
+            carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
+            carrotBoxCollider.size = newCarrotBoxSize;
         }
     }
 
@@ -398,6 +444,8 @@ public class GrowthController : MonoBehaviour
             pepperSpriteRenderer = pepper.GetComponent<SpriteRenderer>();
             pepperSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             pepperSpriteRenderer.size = newPepperSize;
+            pepperBoxCollider = pepper.GetComponent<BoxCollider2D>();
+            pepperBoxCollider.size = newPepperBoxSize;
         }
     }
 
@@ -432,11 +480,11 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject potato in potatoes)
         {
             potato.GetComponent<SpriteRenderer>().sprite = newSprite;
-            potatoBoxCollider = potato.GetComponent<BoxCollider2D>();
             potatoSpriteRenderer = potato.GetComponent<SpriteRenderer>();
             potatoSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             potatoSpriteRenderer.size = newPotatoSize;
-            potatoBoxCollider.size = new Vector2(3f, 5f);
+            potatoBoxCollider = potato.GetComponent<BoxCollider2D>();
+            potatoBoxCollider.size = newPotatoBoxSize;
         }
     }
 
@@ -474,6 +522,8 @@ public class GrowthController : MonoBehaviour
             lettuceSpriteRenderer = lettuce.GetComponent<SpriteRenderer>();
             lettuceSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             lettuceSpriteRenderer.size = newLettuceSize;
+            lettuceBoxCollider = lettuce.GetComponent<BoxCollider2D>();
+            lettuceBoxCollider.size = newLettuceBoxSize;
         }
     }
 
@@ -510,6 +560,8 @@ public class GrowthController : MonoBehaviour
             cucSpriteRenderer = cuc.GetComponent<SpriteRenderer>();
             cucSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             cucSpriteRenderer.size = newCucSize;
+            cucBoxCollider = cuc.GetComponent<BoxCollider2D>();
+            cucBoxCollider.size = newCucBoxSize;
         }
     }
 
@@ -547,6 +599,8 @@ public class GrowthController : MonoBehaviour
             onionSpriteRenderer = onion.GetComponent<SpriteRenderer>();
             onionSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             onionSpriteRenderer.size = newOnionSize;
+            onionBoxCollider = onion.GetComponent<BoxCollider2D>();
+            onionBoxCollider.size = newOnionBoxSize;
         }
     }
 
@@ -584,6 +638,8 @@ public class GrowthController : MonoBehaviour
             squashSpriteRenderer = squash.GetComponent<SpriteRenderer>();
             squashSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             squashSpriteRenderer.size = newSquashSize;
+            squashBoxCollider = squash.GetComponent<BoxCollider2D>();
+            squashBoxCollider.size = newSquashBoxSize;
         }
     }
 
@@ -620,6 +676,8 @@ public class GrowthController : MonoBehaviour
             cornSpriteRenderer = corn.GetComponent<SpriteRenderer>();
             cornSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             cornSpriteRenderer.size = newCornSize;
+            cornBoxCollider = corn.GetComponent<BoxCollider2D>();
+            cornBoxCollider.size = newCornBoxSize;
         }
     }
 
@@ -656,6 +714,8 @@ public class GrowthController : MonoBehaviour
             pumpkinSpriteRenderer = pumpkin.GetComponent<SpriteRenderer>();
             pumpkinSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             pumpkinSpriteRenderer.size = newPumpkinSize;
+            pumpkinBoxCollider = pumpkin.GetComponent<BoxCollider2D>();
+            pumpkinBoxCollider.size = newPumpkinBoxSize;
         }
     }
 
@@ -693,6 +753,8 @@ public class GrowthController : MonoBehaviour
             turnipSpriteRenderer = turnip.GetComponent<SpriteRenderer>();
             turnipSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             turnipSpriteRenderer.size = newTurnipSize;
+            turnipBoxCollider = turnip.GetComponent<BoxCollider2D>();
+            turnipBoxCollider.size = newTurnipBoxSize;
         }
     }
 
@@ -729,6 +791,8 @@ public class GrowthController : MonoBehaviour
             tomatoSpriteRenderer = tomato.GetComponent<SpriteRenderer>();
             tomatoSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             tomatoSpriteRenderer.size = newTomatoSize;
+            tomatoBoxCollider = tomato.GetComponent<BoxCollider2D>();
+            tomatoBoxCollider.size = newTomatoBoxSize;
         }
     }
 
@@ -765,6 +829,8 @@ public class GrowthController : MonoBehaviour
             pintoSpriteRenderer = pinto.GetComponent<SpriteRenderer>();
             pintoSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             pintoSpriteRenderer.size = newPintoSize;
+            pintoBoxCollider = pinto.GetComponent<BoxCollider2D>();
+            pintoBoxCollider.size = newPintoBoxSize;
         }
     }
 
@@ -801,6 +867,8 @@ public class GrowthController : MonoBehaviour
             greenBeanSpriteRenderer = greenBean.GetComponent<SpriteRenderer>();
             greenBeanSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             greenBeanSpriteRenderer.size = newGreenBeanSize;
+            greenBeanBoxCollider = greenBean.GetComponent<BoxCollider2D>();
+            greenBeanBoxCollider.size = newGreenBeanBoxSize;
         }
     }
 
@@ -838,6 +906,8 @@ public class GrowthController : MonoBehaviour
             broccoliSpriteRenderer = broccoli.GetComponent<SpriteRenderer>();
             broccoliSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             broccoliSpriteRenderer.size = newBroccoliSize;
+            broccoliBoxCollider = broccoli.GetComponent<BoxCollider2D>();
+            broccoliBoxCollider.size = newBroccoliBoxSize;
         }
     }
 
@@ -874,6 +944,8 @@ public class GrowthController : MonoBehaviour
             celerySpriteRenderer = celery.GetComponent<SpriteRenderer>();
             celerySpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             celerySpriteRenderer.size = newCelerySize;
+            celeryBoxCollider = celery.GetComponent<BoxCollider2D>();
+            celeryBoxCollider.size = newCeleryBoxSize;
         }
     }
 
@@ -911,6 +983,8 @@ public class GrowthController : MonoBehaviour
             brusselSpriteRenderer = brussel.GetComponent<SpriteRenderer>();
             brusselSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             brusselSpriteRenderer.size = newBrusselSize;
+            brusselBoxCollider = brussel.GetComponent<BoxCollider2D>();
+            brusselBoxCollider.size = newBrusselBoxSize;
         }
     }
 
@@ -947,6 +1021,8 @@ public class GrowthController : MonoBehaviour
             kaleSpriteRenderer = kale.GetComponent<SpriteRenderer>();
             kaleSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             kaleSpriteRenderer.size = newKaleSize;
+            kaleBoxCollider = kale.GetComponent<BoxCollider2D>();
+            kaleBoxCollider.size = newKaleBoxSize;
         }
     }
 
@@ -984,6 +1060,8 @@ public class GrowthController : MonoBehaviour
             cabbageSpriteRenderer = cabbage.GetComponent<SpriteRenderer>();
             cabbageSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             cabbageSpriteRenderer.size = newCabbageSize;
+            cabbageBoxCollider = cabbage.GetComponent<BoxCollider2D>();
+            cabbageBoxCollider.size = newCabbageBoxSize;
         }
     }
 
@@ -1020,6 +1098,8 @@ public class GrowthController : MonoBehaviour
             eggplantSpriteRenderer = eggplant.GetComponent<SpriteRenderer>();
             eggplantSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             eggplantSpriteRenderer.size = newEggplantSize;
+            eggplantBoxCollider = eggplant.GetComponent<BoxCollider2D>();
+            eggplantBoxCollider.size = newEggplantBoxSize;
         }
     }
 
@@ -1056,6 +1136,8 @@ public class GrowthController : MonoBehaviour
             mustardGreensSpriteRenderer = mustardGreen.GetComponent<SpriteRenderer>();
             mustardGreensSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             mustardGreensSpriteRenderer.size = newMustardGreensSize;
+            mustardGreenBoxCollider = mustardGreen.GetComponent<BoxCollider2D>();
+            mustardGreenBoxCollider.size = newMustardGreensBoxSize;
         }
     }
 }
