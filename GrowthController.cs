@@ -96,6 +96,8 @@ public class GrowthController : MonoBehaviour
     [SerializeField] GameObject[] mustardGreens;
 
     public Sprite newSprite;
+
+
     public SeasonManager seasonManager;
 
     public Vector2 newPeaSize = new Vector2(1f, 1f);
@@ -259,6 +261,28 @@ public class GrowthController : MonoBehaviour
     public int mustardGreensMonthPlanted;
     public int mustardGreensBestMonth;
 
+    public int peaCurrentSpriteCount;
+    public int carrotCurrentSpriteCount;
+    public int pepperCurrentSpriteCount;
+    public int potatoCurrentSpriteCount;
+    public int lettuceCurrentSpriteCount;
+    public int cucCurrentSpriteCount;
+    public int onionCurrentSpriteCount;
+    public int squashCurrentSpriteCount;
+    public int cornCurrentSpriteCount;
+    public int pumpkinCurrentSpriteCount;
+    public int turnipCurrentSpriteCount;
+    public int tomatoCurrentSpriteCount;
+    public int pintoCurrentSpriteCount;
+    public int greenBeanCurrentSpriteCount;
+    public int broccoliCurrentSpriteCount;
+    public int celeryCurrentSpriteCount;
+    public int brusselCurrentSpriteCount;
+    public int kaleCurrentSpriteCount;
+    public int cabbageCurrentSpriteCount;
+    public int eggplantCurrentSpriteCount;
+    public int mustardGreensCurrentSpriteCount;
+
 
     public float peaPlantTiming;
     public float carrotPlantTiming;
@@ -353,6 +377,7 @@ public class GrowthController : MonoBehaviour
     public void SetPeaPlantedSprite()
     {
         newSprite = peaSprites[1];
+        peaCurrentSpriteCount = 1;
         foreach (GameObject pea in peas)
         {
             pea.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -361,14 +386,33 @@ public class GrowthController : MonoBehaviour
     public void GrowPeaSprite()
     {
         newSprite = peaSprites[peaSpriteStart];
+        peaCurrentSpriteCount++;
         foreach (GameObject pea in peas)
         {
             pea.GetComponent<SpriteRenderer>().sprite = newSprite;
             peaSpriteRenderer = pea.GetComponent<SpriteRenderer>();
             peaSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
-            peaSpriteRenderer.size = newPeaSize;
             peaBoxCollider = pea.GetComponent<BoxCollider2D>();
-            peaBoxCollider.size = newPeaBoxSize;
+            peaBoxCollider.offset = new Vector2(0, 0);
+
+            if (peaCurrentSpriteCount == 2)
+            {
+                peaSpriteRenderer.size = new Vector2(1, 1);
+                peaBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (peaCurrentSpriteCount == 3)
+            {
+                peaSpriteRenderer.size = new Vector2(1, 1);
+                peaBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (peaCurrentSpriteCount == 4)
+            {
+                peaSpriteRenderer.size = new Vector2(1, 1);
+                peaBoxCollider.size = new Vector2(1, 1);
+            }
+
         }
     }
 
@@ -392,6 +436,7 @@ public class GrowthController : MonoBehaviour
     public void SetCarrotPlantedSprite()
     {
         newSprite = carrotSprites[1];
+        carrotCurrentSpriteCount = 1;
         foreach (GameObject carrot in carrots)
         {
             carrot.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -400,14 +445,44 @@ public class GrowthController : MonoBehaviour
     public void GrowCarrotSprite()
     {
         newSprite = carrotSprites[carrotSpriteStart];
+        carrotCurrentSpriteCount++;
         foreach (GameObject carrot in carrots)
         {
             carrot.GetComponent<SpriteRenderer>().sprite = newSprite;
             carrotSpriteRenderer = carrot.GetComponent<SpriteRenderer>();
             carrotSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
-            carrotSpriteRenderer.size = newCarrotSize;
             carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
-            carrotBoxCollider.size = newCarrotBoxSize;
+            carrotBoxCollider.offset = new Vector2(0,0);
+
+            if (carrotCurrentSpriteCount == 2)
+            {
+                carrotSpriteRenderer.size = new Vector2(1, 1);
+                carrotBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (carrotCurrentSpriteCount == 3)
+            {
+                carrotSpriteRenderer.size = new Vector2(1, 1);
+                carrotBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (carrotCurrentSpriteCount == 4)
+            {
+                carrotSpriteRenderer.size = new Vector2(1, 1);
+                carrotBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (carrotCurrentSpriteCount == 5)
+            {
+                carrotSpriteRenderer.size = new Vector2(1, 1);
+                carrotBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (carrotCurrentSpriteCount <= 6)
+            {
+                carrotSpriteRenderer.size = new Vector2(1, 1);
+                carrotBoxCollider.size = new Vector2(1, 1);
+            }
         }
     }
 
@@ -430,6 +505,7 @@ public class GrowthController : MonoBehaviour
     public void SetPepperPlantedSprite()
     {
         newSprite = pepperSprites[1];
+        pepperCurrentSpriteCount = 1;
         foreach (GameObject pepper in peppers)
         {
             pepper.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -443,9 +519,38 @@ public class GrowthController : MonoBehaviour
             pepper.GetComponent<SpriteRenderer>().sprite = newSprite;
             pepperSpriteRenderer = pepper.GetComponent<SpriteRenderer>();
             pepperSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
-            pepperSpriteRenderer.size = newPepperSize;
             pepperBoxCollider = pepper.GetComponent<BoxCollider2D>();
-            pepperBoxCollider.size = newPepperBoxSize;
+            pepperBoxCollider.offset = new Vector2(0, 0);
+
+            if (pepperCurrentSpriteCount == 2)
+            {
+                pepperSpriteRenderer.size = new Vector2(1, 1);
+                pepperBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (pepperCurrentSpriteCount == 3)
+            {
+                pepperSpriteRenderer.size = new Vector2(1, 1);
+                pepperBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (pepperCurrentSpriteCount == 4)
+            {
+                pepperSpriteRenderer.size = new Vector2(1, 1);
+                pepperBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (pepperCurrentSpriteCount == 5)
+            {
+                pepperSpriteRenderer.size = new Vector2(1, 1);
+                pepperBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (pepperCurrentSpriteCount <= 6)
+            {
+                pepperSpriteRenderer.size = new Vector2(1, 1);
+                pepperBoxCollider.size = new Vector2(1, 1);
+            }
         }
     }
 
@@ -468,7 +573,7 @@ public class GrowthController : MonoBehaviour
     public void SetPotatoPlantedSprite()
     {
         newSprite = potatoSprites[1];
-
+        potatoCurrentSpriteCount = 1;
         foreach (GameObject potato in potatoes)
         {
             potato.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -482,9 +587,44 @@ public class GrowthController : MonoBehaviour
             potato.GetComponent<SpriteRenderer>().sprite = newSprite;
             potatoSpriteRenderer = potato.GetComponent<SpriteRenderer>();
             potatoSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
-            potatoSpriteRenderer.size = newPotatoSize;
             potatoBoxCollider = potato.GetComponent<BoxCollider2D>();
-            potatoBoxCollider.size = newPotatoBoxSize;
+            potatoBoxCollider.offset = new Vector2(0, 0);
+
+            if (potatoCurrentSpriteCount == 2)
+            {
+                potatoSpriteRenderer.size = new Vector2(1, 1);
+                potatoBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (potatoCurrentSpriteCount == 3)
+            {
+                potatoSpriteRenderer.size = new Vector2(1, 1);
+                potatoBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (potatoCurrentSpriteCount == 4)
+            {
+                potatoSpriteRenderer.size = new Vector2(1, 1);
+                potatoBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (potatoCurrentSpriteCount == 5)
+            {
+                potatoSpriteRenderer.size = new Vector2(1, 1);
+                potatoBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (potatoCurrentSpriteCount == 6)
+            {
+                potatoSpriteRenderer.size = new Vector2(1, 1);
+                potatoBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (potatoCurrentSpriteCount <= 7)
+            {
+                potatoSpriteRenderer.size = new Vector2(1, 1);
+                potatoBoxCollider.size = new Vector2(1, 1);
+            }
         }
     }
 
@@ -508,6 +648,7 @@ public class GrowthController : MonoBehaviour
     public void SetLettucePlantedSprite()
     {
         newSprite = lettuceSprites[1];
+        lettuceCurrentSpriteCount = 1;
         foreach (GameObject lettuce in lettuces)
         {
             lettuce.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -521,9 +662,38 @@ public class GrowthController : MonoBehaviour
             lettuce.GetComponent<SpriteRenderer>().sprite = newSprite;
             lettuceSpriteRenderer = lettuce.GetComponent<SpriteRenderer>();
             lettuceSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
-            lettuceSpriteRenderer.size = newLettuceSize;
             lettuceBoxCollider = lettuce.GetComponent<BoxCollider2D>();
-            lettuceBoxCollider.size = newLettuceBoxSize;
+            lettuceBoxCollider.offset = new Vector2(0, 0);
+
+            if (lettuceCurrentSpriteCount == 2)
+            {
+                lettuceSpriteRenderer.size = new Vector2(1, 1);
+                lettuceBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (lettuceCurrentSpriteCount == 3)
+            {
+                lettuceSpriteRenderer.size = new Vector2(1, 1);
+                lettuceBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (lettuceCurrentSpriteCount == 4)
+            {
+                lettuceSpriteRenderer.size = new Vector2(1, 1);
+                lettuceBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (lettuceCurrentSpriteCount == 5)
+            {
+                lettuceSpriteRenderer.size = new Vector2(1, 1);
+                lettuceBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (lettuceCurrentSpriteCount <= 6)
+            {
+                lettuceSpriteRenderer.size = new Vector2(1, 1);
+                lettuceBoxCollider.size = new Vector2(1, 1);
+            }
         }
     }
 
@@ -546,6 +716,7 @@ public class GrowthController : MonoBehaviour
     public void SetCucPlantedSprite()
     {
         newSprite = cucSprites[1];
+        cucCurrentSpriteCount = 1;
         foreach (GameObject cuc in cucs)
         {
             cuc.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -559,9 +730,32 @@ public class GrowthController : MonoBehaviour
             cuc.GetComponent<SpriteRenderer>().sprite = newSprite;
             cucSpriteRenderer = cuc.GetComponent<SpriteRenderer>();
             cucSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
-            cucSpriteRenderer.size = newCucSize;
             cucBoxCollider = cuc.GetComponent<BoxCollider2D>();
-            cucBoxCollider.size = newCucBoxSize;
+            cucBoxCollider.offset = new Vector2(0, 0);
+
+            if (cucCurrentSpriteCount == 2)
+            {
+                cucSpriteRenderer.size = new Vector2(1, 1);
+                cucBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (cucCurrentSpriteCount == 3)
+            {
+                cucSpriteRenderer.size = new Vector2(1, 1);
+                cucBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (cucCurrentSpriteCount == 4)
+            {
+                cucSpriteRenderer.size = new Vector2(1, 1);
+                cucBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (cucCurrentSpriteCount <= 5)
+            {
+                cucSpriteRenderer.size = new Vector2(1, 1);
+                cucBoxCollider.size = new Vector2(1, 1);
+            }
         }
     }
 
@@ -585,6 +779,7 @@ public class GrowthController : MonoBehaviour
     public void SetOnionPlantedSprite()
     {
         newSprite = onionSprites[1];
+        onionCurrentSpriteCount = 1;
         foreach (GameObject onion in onions)
         {
             onion.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -598,9 +793,32 @@ public class GrowthController : MonoBehaviour
             onion.GetComponent<SpriteRenderer>().sprite = newSprite;
             onionSpriteRenderer = onion.GetComponent<SpriteRenderer>();
             onionSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
-            onionSpriteRenderer.size = newOnionSize;
             onionBoxCollider = onion.GetComponent<BoxCollider2D>();
-            onionBoxCollider.size = newOnionBoxSize;
+            onionBoxCollider.offset = new Vector2(0, 0);
+
+            if (onionCurrentSpriteCount <= 6)
+            {
+                onionSpriteRenderer.size = new Vector2(1, 1);
+                onionBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (onionCurrentSpriteCount <= 6)
+            {
+                onionSpriteRenderer.size = new Vector2(1, 1);
+                onionBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (onionCurrentSpriteCount <= 6)
+            {
+                onionSpriteRenderer.size = new Vector2(1, 1);
+                onionBoxCollider.size = new Vector2(1, 1);
+            }
+
+            if (onionCurrentSpriteCount <= 6)
+            {
+                onionSpriteRenderer.size = new Vector2(1, 1);
+                onionBoxCollider.size = new Vector2(1, 1);
+            }
         }
     }
 
@@ -624,6 +842,7 @@ public class GrowthController : MonoBehaviour
     public void SetSquashPlantedSprite()
     {
         newSprite = squashSprites[1];
+        squashCurrentSpriteCount = 1;
         foreach (GameObject squash in squashes)
         {
             squash.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -640,6 +859,7 @@ public class GrowthController : MonoBehaviour
             squashSpriteRenderer.size = newSquashSize;
             squashBoxCollider = squash.GetComponent<BoxCollider2D>();
             squashBoxCollider.size = newSquashBoxSize;
+            squashBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -662,6 +882,7 @@ public class GrowthController : MonoBehaviour
     public void SetCornPlantedSprite()
     {
         newSprite = cornSprites[1];
+        cornCurrentSpriteCount = 1;
         foreach (GameObject corn in corns)
         {
             corn.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -678,6 +899,7 @@ public class GrowthController : MonoBehaviour
             cornSpriteRenderer.size = newCornSize;
             cornBoxCollider = corn.GetComponent<BoxCollider2D>();
             cornBoxCollider.size = newCornBoxSize;
+            cornBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -700,6 +922,7 @@ public class GrowthController : MonoBehaviour
     public void SetPumpkinPlantedSprite()
     {
         newSprite = pumpkinSprites[1];
+        pumpkinCurrentSpriteCount = 1;
         foreach (GameObject pumpkin in pumpkins)
         {
             pumpkin.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -716,6 +939,7 @@ public class GrowthController : MonoBehaviour
             pumpkinSpriteRenderer.size = newPumpkinSize;
             pumpkinBoxCollider = pumpkin.GetComponent<BoxCollider2D>();
             pumpkinBoxCollider.size = newPumpkinBoxSize;
+            pumpkinBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -739,6 +963,7 @@ public class GrowthController : MonoBehaviour
     public void SetTurnipPlantedSprite()
     {
         newSprite = turnipSprites[1];
+        turnipCurrentSpriteCount = 1;
         foreach (GameObject turnip in turnips)
         {
             turnip.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -755,6 +980,7 @@ public class GrowthController : MonoBehaviour
             turnipSpriteRenderer.size = newTurnipSize;
             turnipBoxCollider = turnip.GetComponent<BoxCollider2D>();
             turnipBoxCollider.size = newTurnipBoxSize;
+            turnipBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -777,6 +1003,7 @@ public class GrowthController : MonoBehaviour
     public void SetTomatoPlantedSprite()
     {
         newSprite = tomatoSprites[1];
+        tomatoCurrentSpriteCount = 1;
         foreach (GameObject tomato in tomatoes)
         {
             tomato.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -793,6 +1020,7 @@ public class GrowthController : MonoBehaviour
             tomatoSpriteRenderer.size = newTomatoSize;
             tomatoBoxCollider = tomato.GetComponent<BoxCollider2D>();
             tomatoBoxCollider.size = newTomatoBoxSize;
+            tomatoBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -815,6 +1043,7 @@ public class GrowthController : MonoBehaviour
     public void SetPintoPlantedSprite()
     {
         newSprite = pintoSprites[1];
+        pintoCurrentSpriteCount = 1;
         foreach (GameObject pinto in pintos)
         {
             pinto.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -831,6 +1060,7 @@ public class GrowthController : MonoBehaviour
             pintoSpriteRenderer.size = newPintoSize;
             pintoBoxCollider = pinto.GetComponent<BoxCollider2D>();
             pintoBoxCollider.size = newPintoBoxSize;
+            pintoBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -853,6 +1083,7 @@ public class GrowthController : MonoBehaviour
     public void SetGreenBeanPlantedSprite()
     {
         newSprite = greenBeanSprites[1];
+        greenBeanCurrentSpriteCount = 1;
         foreach (GameObject greenBean in greenBeans)
         {
             greenBean.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -869,6 +1100,7 @@ public class GrowthController : MonoBehaviour
             greenBeanSpriteRenderer.size = newGreenBeanSize;
             greenBeanBoxCollider = greenBean.GetComponent<BoxCollider2D>();
             greenBeanBoxCollider.size = newGreenBeanBoxSize;
+            greenBeanBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -892,6 +1124,7 @@ public class GrowthController : MonoBehaviour
     public void SetBroccoliPlantedSprite()
     {
         newSprite = broccoliSprites[1];
+        broccoliCurrentSpriteCount = 1;
         foreach (GameObject broccoli in broccolies)
         {
             broccoli.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -908,6 +1141,7 @@ public class GrowthController : MonoBehaviour
             broccoliSpriteRenderer.size = newBroccoliSize;
             broccoliBoxCollider = broccoli.GetComponent<BoxCollider2D>();
             broccoliBoxCollider.size = newBroccoliBoxSize;
+            broccoliBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -930,6 +1164,7 @@ public class GrowthController : MonoBehaviour
     public void SetCeleryPlantedSprite()
     {
         newSprite = celerySprites[1];
+        celeryCurrentSpriteCount = 1;
         foreach (GameObject celery in celeries)
         {
             celery.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -946,6 +1181,7 @@ public class GrowthController : MonoBehaviour
             celerySpriteRenderer.size = newCelerySize;
             celeryBoxCollider = celery.GetComponent<BoxCollider2D>();
             celeryBoxCollider.size = newCeleryBoxSize;
+            celeryBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -969,6 +1205,7 @@ public class GrowthController : MonoBehaviour
     public void SetBrusselPlantedSprite()
     {
         newSprite = brusselSprites[1];
+        brusselCurrentSpriteCount = 1;
         foreach (GameObject brussel in brussels)
         {
             brussel.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -985,6 +1222,7 @@ public class GrowthController : MonoBehaviour
             brusselSpriteRenderer.size = newBrusselSize;
             brusselBoxCollider = brussel.GetComponent<BoxCollider2D>();
             brusselBoxCollider.size = newBrusselBoxSize;
+            brusselBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -1007,6 +1245,7 @@ public class GrowthController : MonoBehaviour
     public void SetKalePlantedSprite()
     {
         newSprite = kaleSprites[1];
+        kaleCurrentSpriteCount = 1;
         foreach (GameObject kale in kales)
         {
             kale.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -1023,6 +1262,7 @@ public class GrowthController : MonoBehaviour
             kaleSpriteRenderer.size = newKaleSize;
             kaleBoxCollider = kale.GetComponent<BoxCollider2D>();
             kaleBoxCollider.size = newKaleBoxSize;
+            kaleBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -1046,6 +1286,7 @@ public class GrowthController : MonoBehaviour
     public void SetCabbagePlantedSprite()
     {
         newSprite = cabbageSprites[1];
+        cabbageCurrentSpriteCount = 1;
         foreach (GameObject cabbage in cabbages)
         {
             cabbage.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -1062,6 +1303,7 @@ public class GrowthController : MonoBehaviour
             cabbageSpriteRenderer.size = newCabbageSize;
             cabbageBoxCollider = cabbage.GetComponent<BoxCollider2D>();
             cabbageBoxCollider.size = newCabbageBoxSize;
+            cabbageBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -1084,6 +1326,7 @@ public class GrowthController : MonoBehaviour
     public void SetEggplantPlantedSprite()
     {
         newSprite = eggplantSprites[1];
+        eggplantCurrentSpriteCount = 1;
         foreach (GameObject eggplant in eggplants)
         {
             eggplant.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -1100,6 +1343,7 @@ public class GrowthController : MonoBehaviour
             eggplantSpriteRenderer.size = newEggplantSize;
             eggplantBoxCollider = eggplant.GetComponent<BoxCollider2D>();
             eggplantBoxCollider.size = newEggplantBoxSize;
+            eggplantBoxCollider.offset = new Vector2(0, 0);
         }
     }
 
@@ -1122,6 +1366,7 @@ public class GrowthController : MonoBehaviour
     public void SetMustardGreensPlantedSprite()
     {
         newSprite = mustardGreensSprites[1];
+        mustardGreensCurrentSpriteCount = 1;
         foreach (GameObject mustardGreen in mustardGreens)
         {
             mustardGreen.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -1138,6 +1383,7 @@ public class GrowthController : MonoBehaviour
             mustardGreensSpriteRenderer.size = newMustardGreensSize;
             mustardGreenBoxCollider = mustardGreen.GetComponent<BoxCollider2D>();
             mustardGreenBoxCollider.size = newMustardGreensBoxSize;
+            mustardGreenBoxCollider.offset = new Vector2(0, 0);
         }
     }
 }
