@@ -8,6 +8,9 @@ public class TypewriterEffect : MonoBehaviour
     public TextMeshProUGUI cutSceneText;
     public TextMeshProUGUI continueButtonText;
 
+    public GameObject backgroundOne;
+    public GameObject backgroundTwo;
+
     [TextArea(3, 10)]
     public string[] textLines;
 
@@ -42,6 +45,11 @@ public class TypewriterEffect : MonoBehaviour
                     cutSceneText.text = "";
                 }
             }
+        }
+
+        if (currentLineIndex == 3)
+        {
+            backgroundOne.transform.gameObject.SetActive(false);
         }
 
         if (currentLineIndex >= 10)

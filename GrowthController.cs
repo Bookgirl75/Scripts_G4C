@@ -123,7 +123,7 @@ public class GrowthController : MonoBehaviour
     public Vector2 newMustardGreensSize = new Vector2(1f, 1f);
 
     public Vector2 newPeaBoxSize = new Vector2(1f, 1f);
-    public Vector2 newCarrotBoxSize = new Vector2(1f, 1f);
+    public Vector2 newCarrotBoxSize = new Vector3(1f, 1f, 1f);
     public Vector2 newPepperBoxSize = new Vector2(1f, 1f);
     public Vector2 newPotatoBoxSize = new Vector2(1f, 1f);
     public Vector2 newLettuceBoxSize = new Vector2(1f, 1f);
@@ -449,25 +449,28 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject carrot in carrots)
         {
             carrot.GetComponent<SpriteRenderer>().sprite = newSprite;
-            carrotSpriteRenderer = carrot.GetComponent<SpriteRenderer>();
-            carrotSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
-            carrotBoxCollider.offset = new Vector2(0,0);
 
+            //Debug.Log(carrotSpriteRenderer.size + " old");
             if (carrotCurrentSpriteCount == 2)
             {
-                carrotSpriteRenderer.size = newCarrotSize;
-                carrotBoxCollider.size = newCarrotBoxSize;
-                Debug.Log("hehehehehehe");
+                carrotBoxCollider.offset = new Vector2(0, 0);
+                DestroyImmediate(carrotBoxCollider);
+                carrot.AddComponent<BoxCollider2D>();
+                carrot.transform.localScale = newCarrotSize;
+                carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
             }
 
             if (carrotCurrentSpriteCount == 3)
             {
-                carrotSpriteRenderer.size = new Vector2(1, 1);
-                carrotBoxCollider.size = new Vector2(1, 1);
+                carrotBoxCollider.offset = new Vector2(0, 0);
+                DestroyImmediate(carrotBoxCollider);
+                carrot.AddComponent<BoxCollider2D>();
+                carrot.transform.localScale = newCarrotSize;
+                carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
             }
 
-            if (carrotCurrentSpriteCount == 4)
+            /*if (carrotCurrentSpriteCount == 4)
             {
                 carrotSpriteRenderer.size = new Vector2(1, 1);
                 carrotBoxCollider.size = new Vector2(1, 1);
@@ -483,7 +486,7 @@ public class GrowthController : MonoBehaviour
             {
                 carrotSpriteRenderer.size = new Vector2(1, 1);
                 carrotBoxCollider.size = new Vector2(1, 1);
-            }
+            }*/
         }
     }
 
