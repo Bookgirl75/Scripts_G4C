@@ -368,10 +368,7 @@ public class GrowthController : MonoBehaviour
         foreach (GameObject pea in peas)
         {
             pea.GetComponent<SpriteRenderer>().sprite = newSprite;
-            peaSpriteRenderer = pea.GetComponent<SpriteRenderer>();
-            peaSpriteRenderer.drawMode = SpriteDrawMode.Sliced;
             peaBoxCollider = pea.GetComponent<BoxCollider2D>();
-            peaBoxCollider.offset = new Vector2(0, 0);
 
             if (peaCurrentSpriteCount == 2)
             {
@@ -428,13 +425,14 @@ public class GrowthController : MonoBehaviour
         {
             carrot.GetComponent<SpriteRenderer>().sprite = newSprite;
             carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
+            carrotBoxCollider.offset = new Vector2(0, 0);
             
             if (carrotCurrentSpriteCount == 2)
             {
                 carrotBoxCollider.offset = new Vector2(0, 0);
+                carrot.transform.localScale = newCarrotSize;
                 DestroyImmediate(carrotBoxCollider);
                 carrot.AddComponent<BoxCollider2D>();
-                carrot.transform.localScale = newCarrotSize;
                 carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
             }
 
@@ -447,23 +445,32 @@ public class GrowthController : MonoBehaviour
                 carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
             }
 
-            /*if (carrotCurrentSpriteCount == 4)
+            if (carrotCurrentSpriteCount == 4)
             {
-                carrotSpriteRenderer.size = new Vector2(1, 1);
-                carrotBoxCollider.size = new Vector2(1, 1);
+                carrotBoxCollider.offset = new Vector2(0, 0);
+                carrot.transform.localScale = newCarrotSize;
+                DestroyImmediate(carrotBoxCollider);
+                carrot.AddComponent<BoxCollider2D>();
+                carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
             }
 
             if (carrotCurrentSpriteCount == 5)
             {
-                carrotSpriteRenderer.size = new Vector2(1, 1);
-                carrotBoxCollider.size = new Vector2(1, 1);
+                carrotBoxCollider.offset = new Vector2(0, 0);
+                carrot.transform.localScale = newCarrotSize;
+                DestroyImmediate(carrotBoxCollider);
+                carrot.AddComponent<BoxCollider2D>();
+                carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
             }
 
             if (carrotCurrentSpriteCount <= 6)
             {
-                carrotSpriteRenderer.size = new Vector2(1, 1);
-                carrotBoxCollider.size = new Vector2(1, 1);
-            }*/
+                carrotBoxCollider.offset = new Vector2(0, 0);
+                carrot.transform.localScale = newCarrotSize;
+                DestroyImmediate(carrotBoxCollider);
+                carrot.AddComponent<BoxCollider2D>();
+                carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
+            }
         }
     }
 
@@ -503,8 +510,11 @@ public class GrowthController : MonoBehaviour
             
             if (pepperCurrentSpriteCount == 2)
             {
-                pepperSpriteRenderer.size = new Vector2(1, 1);
-                pepperBoxCollider.size = new Vector2(1, 1);
+                carrotBoxCollider.offset = new Vector2(0, 0);
+                carrot.transform.localScale = newCarrotSize;
+                DestroyImmediate(carrotBoxCollider);
+                carrot.AddComponent<BoxCollider2D>();
+                carrotBoxCollider = carrot.GetComponent<BoxCollider2D>();
             }
 
             if (pepperCurrentSpriteCount == 3)
