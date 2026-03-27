@@ -555,7 +555,10 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingJan()
     {
-       
+        goodEventText.text = "This is a test";
+        eventButton.transform.gameObject.SetActive(true);
+        badEventText.transform.gameObject.SetActive(true);
+        goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingJan()
     {
@@ -677,7 +680,8 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingMar()
     {
-        badEventText.text = "This is a test";
+        badEventText.text = "The lack of nutrients in the soil causes plant production to decrease by 20%";
+        percentLoss = .2f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -704,7 +708,7 @@ public class SeasonManager : MonoBehaviour
     {
         goodEventText.text = "A local carpenter hears about your garden & makes a few bee boxes that " +
             "soon attracts a colony. Total food grown increases by 50%";
-        percentGain = 5;
+        percentGain = .5f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -958,6 +962,7 @@ public class SeasonManager : MonoBehaviour
     public void GoodThingNov()
     {
         goodEventText.text = "The town gets together to help you mulch the garden beds, keeping the plants warm in the cold weather and increasing production by 10%";
+        percentGain = .1f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
