@@ -555,10 +555,7 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingJan()
     {
-        goodEventText.text = "This is a test";
-        eventButton.transform.gameObject.SetActive(true);
-        badEventText.transform.gameObject.SetActive(true);
-        goodEventText.transform.gameObject.SetActive(true);
+       
     }
     public void BadThingJan()
     {
