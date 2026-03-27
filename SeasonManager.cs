@@ -706,14 +706,31 @@ public class SeasonManager : MonoBehaviour
     public void GoodThingMay()
     {
         goodEventText.text = "A local carpenter hears about your garden & makes a few bee boxes that " +
-            "soon attracts a colony. Total food grown increases by jklafjkjfadhds";
+            "soon attracts a colony. Total food grown increases by 50%";
+        percentGain = 5;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingMay()
     {
-        badEventText.text = "Naughty squirrels decide the garden is for them, and eat jifdakjdsafkjjdfks";
+        badEventText.text = "Naughty squirrels decide the garden is for them and eat the squash, cucumbers, tomatoes, and carrots";
+        foreach (GameObject tomato in tomatoes)
+        {
+            Destroy(tomato);
+        }
+        foreach (GameObject squash in squashes)
+        {
+            Destroy(squash);
+        }
+        foreach (GameObject cuc in cucs)
+        {
+            Destroy(cuc);
+        }
+        foreach (GameObject carrot in carrots)
+        {
+            Destroy(carrot);
+        }
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -943,7 +960,7 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingNov()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "The town gets together to help you mulch the garden beds, keeping the plants warm in the cold weather and increasing production by 10%";
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -1045,7 +1062,7 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingDec()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "Rainfalls keep the ground moist, preventing the late harvest plants from freezing.";
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
