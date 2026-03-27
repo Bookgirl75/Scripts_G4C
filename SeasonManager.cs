@@ -562,7 +562,8 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingJan()
     {
-        badEventText.text = "This is a test";
+        badEventText.text = "The ground is too frozen to plant early crops. Nothing gets planted this month.";
+        plantButtonButton.transform.gameObject.SetActive(false);
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -578,8 +579,91 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingFeb()
     {
-        badEventText.text = "The ground is too frozen to plant early crops. Nothing gets planted this month.";
-        plantButtonButton.transform.gameObject.SetActive(false);
+        badEventText.text = "The good weather caused weeds to sprout that choke and kill everything you've planted so far.";
+        foreach (GameObject pepper in peppers)
+        {
+            Destroy(pepper);
+        }
+        foreach (GameObject pea in peas)
+        {
+            Destroy(pea);
+        }
+        foreach (GameObject potato in potatoes)
+        {
+            Destroy(potato);
+        }
+        foreach (GameObject lettuce in lettuces)
+        {
+            Destroy(lettuce);
+        }
+        foreach (GameObject cuc in cucs)
+        {
+            Destroy(cuc);
+        }
+        foreach (GameObject carrot in carrots)
+        {
+            Destroy(carrot);
+        }
+        foreach (GameObject tomato in tomatoes)
+        {
+            Destroy(tomato);
+        }
+        foreach (GameObject onion in onions)
+        {
+            Destroy(onion);
+        }
+        foreach (GameObject squash in squashes)
+        {
+            Destroy(squash);
+        }
+        foreach (GameObject corn in corns)
+        {
+            Destroy(corn);
+        }
+        foreach (GameObject pumpkin in pumpkins)
+        {
+            Destroy(pumpkin);
+        }
+        foreach (GameObject turnip in turnips)
+        {
+            Destroy(turnip);
+        }
+        foreach (GameObject pinto in pintos)
+        {
+            Destroy(pinto);
+        }
+        foreach (GameObject greenBean in greenBeans)
+        {
+            Destroy(greenBean);
+        }
+        foreach (GameObject broccoli in broccolies)
+        {
+            Destroy(broccoli);
+        }
+        foreach (GameObject celery in celeries)
+        {
+            Destroy(celery);
+        }
+        foreach (GameObject brussel in brussels)
+        {
+            Destroy(brussel);
+        }
+        foreach (GameObject kale in kales)
+        {
+            Destroy(kale);
+        }
+        foreach (GameObject cabbage in cabbages)
+        {
+            Destroy(cabbage);
+        }
+        foreach (GameObject eggplant in eggplants)
+        {
+            Destroy(eggplant);
+        }
+        foreach (GameObject mustardGreen in mustardGreens)
+        {
+            Destroy(mustardGreen);
+        }
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -686,6 +770,30 @@ public class SeasonManager : MonoBehaviour
         foreach (GameObject celery in celeries)
         {
             Destroy(celery);
+        }
+        foreach (GameObject tomato in tomatoes)
+        {
+            Destroy(tomato);
+        }
+        foreach (GameObject squash in squashes)
+        {
+            Destroy(squash);
+        }
+        foreach (GameObject cuc in cucs)
+        {
+            Destroy(cuc);
+        }
+        foreach (GameObject broccoli in broccolies)
+        {
+            Destroy(broccoli);
+        }
+        foreach (GameObject lettuce in lettuces)
+        {
+            Destroy(lettuce);
+        }
+        foreach (GameObject carrot in carrots)
+        {
+            Destroy(carrot);
         }
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
