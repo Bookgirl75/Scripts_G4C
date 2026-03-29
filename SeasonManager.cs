@@ -520,10 +520,6 @@ public class SeasonManager : MonoBehaviour
 
         if (season == 11)
         {
-            if (badThing == 10)
-            {
-                plantButtonButton.transform.gameObject.SetActive(true);
-            }
             if (goodThing == 11)
             {
                 GoodThingNov();
@@ -572,7 +568,8 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingFeb()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "When tilling the soil to prepare for planting, you find it to be full of worms! This means the soil will be nice and healthy for the plants.";
+        percentGain = .4f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -690,14 +687,16 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingApr()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "A colony of ladybugs move into the garden and make quick work of the aphids and other pests, keeping the plants healthy.";
+        percentGain = .3f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingApr()
     {
-        badEventText.text = "This is a test";
+        badEventText.text = "A suprise hailstorm damages all plants currently in the garden, breaking the sprouts and lowering their harvest.";
+        percentLoss = .75f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -767,7 +766,7 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingJul()
     {
-        badEventText.text = "A lack of rainfall causes a drought that kills all sensitive plants and decreases harvest by 25%";
+        badEventText.text = "A lack of rainfall causes a drought that decreases plant harvest by 25%";
         percentLoss = .25f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
@@ -785,6 +784,7 @@ public class SeasonManager : MonoBehaviour
     public void BadThingAug()
     {
         badEventText.text = "Temperatures spike due to climate change. All plants that can't survive at over 90 degrees die.";
+        percentLoss = .2f;
         foreach (GameObject celery in celeries)
         {
             Destroy(celery);
@@ -821,7 +821,8 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingSep()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "Warm weather lets the last of the plants ripen, increasing harvest for this month by 15%!";
+        percentGain = .15f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -951,7 +952,7 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingOct()
     {
-        badEventText.text = "Ash from forest fires in the North prevent you from planting and harvesting this month.";
+        badEventText.text = "Ash from forest fires in the North prevents you from leaving the house to plant and harvest this month.";
         plantButtonButton.transform.gameObject.SetActive(false);
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
@@ -1065,6 +1066,7 @@ public class SeasonManager : MonoBehaviour
     public void GoodThingDec()
     {
         goodEventText.text = "Rainfalls keep the ground moist, preventing the late harvest plants from freezing.";
+        percentGain = .2f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
