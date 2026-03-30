@@ -235,6 +235,7 @@ public class SeasonManager : MonoBehaviour
             growthController.carrotMonthsCounted = growthController.carrotMonthsCounted + 1;
             growthController.carrotSpriteStart = growthController.carrotMonthsCounted + 1;
             growthController.GrowCarrotSprite();
+            Debug.Log("all is workinging@@");
         }
 
         if ((plantButton.pepperPlanted == true) && (pepperMouseClick.allPeppers == collision4Planting.peppersInGarden))

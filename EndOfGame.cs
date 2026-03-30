@@ -27,12 +27,12 @@ public class EndOfGame : MonoBehaviour
 
         if (10 >= peopleHelped)
         {
-            peopleHelpedText.text = "That means that you made " + peopleHelped + " meals for the community. It's a great start, but I'd aim for more next time;";
+            peopleHelpedText.text = "That means that you made " + peopleHelped + " meals for the community. It's a great start, but I'd aim for more next time.";
         }
 
         else if ((peopleHelped > 10) && (peopleHelped < 50))
         {
-            peopleHelpedText.text = "That means that you made " + peopleHelped + " meals for the community. It's a great start, but I'd aim for more next time;";
+            peopleHelpedText.text = "That means that you made " + peopleHelped + " meals for the community. It's a great start, but I'd aim for more next time.";
         }
 
         else if ((peopleHelped >= 50) && (peopleHelped < 200))

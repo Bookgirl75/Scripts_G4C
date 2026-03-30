@@ -11,6 +11,7 @@ public class ScenesManager : MonoBehaviour
         controlsPage,
         plantingScene,
         resultsScene,
+        artCreditScene,
     }
 
     public void LoadNextScene()
@@ -46,6 +47,11 @@ public class ScenesManager : MonoBehaviour
     public void LoadGameResults()
     {
         SceneManager.LoadScene(Scenes.resultsScene.ToString());
+    }
+    
+    public void LoadArtCredits()
+    {
+        SceneManager.LoadScene(Scenes.artCreditScene.ToString());
     }
 
     public void QuitGame()

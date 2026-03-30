@@ -68,14 +68,14 @@ public class PlantButton : MonoBehaviour
         {
             growthController.PlantPea();
             peaPlanted = true;
-            Destroy(peaPacket);
+            
         }
 
         if ((plantCollision.carrotsReady == true) & (carrotPlanted == false))
         {
             growthController.PlantCarrot();
             carrotPlanted = true;
-            Destroy(carrotPacket);
+            carrotPacket.transform.position = new Vector2(100, 0);
         }
 
         if ((plantCollision.peppersReady == true) & (pepperPlanted == false))

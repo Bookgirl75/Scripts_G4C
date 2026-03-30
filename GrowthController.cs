@@ -421,6 +421,7 @@ public class GrowthController : MonoBehaviour
     {
         newSprite = carrotSprites[carrotSpriteStart];
         carrotCurrentSpriteCount++;
+        Debug.Log("the carrot is at " + carrotCurrentSpriteCount);
         foreach (GameObject carrot in carrots)
         {
             carrot.GetComponent<SpriteRenderer>().sprite = newSprite;

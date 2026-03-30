@@ -10,6 +10,9 @@ public class TypewriterEffect : MonoBehaviour
 
     public GameObject backgroundOne;
     public GameObject backgroundTwo;
+    public GameObject backgroundThree;
+    public GameObject backgroundFour;
+
 
     [TextArea(3, 10)]
     public string[] textLines;
@@ -50,6 +53,16 @@ public class TypewriterEffect : MonoBehaviour
         if (currentLineIndex == 3)
         {
             backgroundOne.transform.gameObject.SetActive(false);
+        }
+        
+        if (currentLineIndex == 5)
+        {
+            backgroundTwo.transform.gameObject.SetActive(false);
+        }
+        
+        if (currentLineIndex == 8)
+        {
+            backgroundThree.transform.gameObject.SetActive(false);
         }
 
         if (currentLineIndex >= 10)

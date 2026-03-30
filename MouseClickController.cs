@@ -89,7 +89,7 @@ public class MouseClickController : MonoBehaviour
             {
                 Instantiate(seeds, new Vector3(0, 0, 0), Quaternion.identity);
 
-                if (seeds.tag == "pea")
+                if (seeds.CompareTag("pea"))
                 {
                     allPeas++;
 
@@ -97,7 +97,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "bellPepper")
+                else if (seeds.CompareTag("bellPepper"))
                 {
                     allPeppers++;
 
@@ -105,7 +105,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "potato")
+                else if (seeds.CompareTag("potato"))
                 {
                     allPotatoes++;
 
@@ -113,7 +113,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "lettuce")
+                else if (seeds.CompareTag("lettuce"))
                 {
                     allLettuces++;
 
@@ -121,7 +121,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "cucumber")
+                else if (seeds.CompareTag("cucumber"))
                 {
                     allCucs++;
 
@@ -129,7 +129,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "carrot")
+                else if (seeds.CompareTag("carrot"))
                 {
                     allCarrots++;
 
@@ -137,7 +137,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "tomato")
+                else if (seeds.CompareTag("tomato"))
                 {
                     allTomatoes++;
 
@@ -145,7 +145,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "onion")
+                else if (seeds.CompareTag("onion"))
                 {
                     allOnions++;
 
@@ -153,7 +153,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "squash")
+                else if (seeds.CompareTag("squash"))
                 {
                     allSquashes++;
 
@@ -161,7 +161,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "corn")
+                else if (seeds.CompareTag("corn"))
                 {
                     allCorns++;
 
@@ -169,7 +169,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "pumpkin")
+                else if (seeds.CompareTag("pumpkin"))
                 {
                     allPumpkins++;
 
@@ -177,7 +177,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "turnip")
+                else if (seeds.CompareTag("turnip"))
                 {
                     allTurnips++;
 
@@ -185,7 +185,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "pintoBean")
+                else if (seeds.CompareTag("pintoBean"))
                 {
                     allPintos++;
 
@@ -193,7 +193,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "greenBean")
+                else if (seeds.CompareTag("greenBean"))
                 {
                     allGreenBeans++;
 
@@ -201,7 +201,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "broccoli")
+                else if (seeds.CompareTag("broccoli"))
                 {
                     allBroccolies++;
 
@@ -209,7 +209,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "celery")
+                else if (seeds.CompareTag("celery"))
                 {
                     allCeleries++;
 
@@ -217,7 +217,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "brusselSprout")
+                else if (seeds.CompareTag("brusselSprout"))
                 {
                     allBrussels++;
 
@@ -225,7 +225,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "kale")
+                else if (seeds.CompareTag("kale"))
                 {
                     allKales++;
 
@@ -233,7 +233,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "cabbage")
+                else if (seeds.CompareTag("cabbage"))
                 {
                     allCabbages++;
 
@@ -241,7 +241,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "eggplant")
+                else if (seeds.CompareTag("eggplant"))
                 {
                     allEggplants++;
 
@@ -249,7 +249,7 @@ public class MouseClickController : MonoBehaviour
                     textOn = true;
                 }
 
-                else if (seeds.tag == "mustardGreens")
+                else if (seeds.CompareTag("mustardGreens"))
                 {
                     allMustardGreens++;
 
