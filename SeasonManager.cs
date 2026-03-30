@@ -521,10 +521,6 @@ public class SeasonManager : MonoBehaviour
 
         if (season == 11)
         {
-            if (badThing == 10)
-            {
-                plantButtonButton.transform.gameObject.SetActive(true);
-            }
             if (goodThing == 11)
             {
                 GoodThingNov();
@@ -563,7 +559,8 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingJan()
     {
-        badEventText.text = "This is a test";
+        badEventText.text = "The ground is too frozen to plant early crops. Nothing gets planted this month.";
+        plantButtonButton.transform.gameObject.SetActive(false);
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -572,15 +569,99 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingFeb()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "When tilling the soil to prepare for planting, you find it to be full of worms! This means the soil will be nice and healthy for the plants.";
+        percentGain = .4f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingFeb()
     {
-        badEventText.text = "The ground is too frozen to plant early crops. Nothing gets planted this month.";
-        plantButtonButton.transform.gameObject.SetActive(false);
+        badEventText.text = "The good weather caused weeds to sprout that choke and kill everything you've planted so far.";
+        foreach (GameObject pepper in peppers)
+        {
+            Destroy(pepper);
+        }
+        foreach (GameObject pea in peas)
+        {
+            Destroy(pea);
+        }
+        foreach (GameObject potato in potatoes)
+        {
+            Destroy(potato);
+        }
+        foreach (GameObject lettuce in lettuces)
+        {
+            Destroy(lettuce);
+        }
+        foreach (GameObject cuc in cucs)
+        {
+            Destroy(cuc);
+        }
+        foreach (GameObject carrot in carrots)
+        {
+            Destroy(carrot);
+        }
+        foreach (GameObject tomato in tomatoes)
+        {
+            Destroy(tomato);
+        }
+        foreach (GameObject onion in onions)
+        {
+            Destroy(onion);
+        }
+        foreach (GameObject squash in squashes)
+        {
+            Destroy(squash);
+        }
+        foreach (GameObject corn in corns)
+        {
+            Destroy(corn);
+        }
+        foreach (GameObject pumpkin in pumpkins)
+        {
+            Destroy(pumpkin);
+        }
+        foreach (GameObject turnip in turnips)
+        {
+            Destroy(turnip);
+        }
+        foreach (GameObject pinto in pintos)
+        {
+            Destroy(pinto);
+        }
+        foreach (GameObject greenBean in greenBeans)
+        {
+            Destroy(greenBean);
+        }
+        foreach (GameObject broccoli in broccolies)
+        {
+            Destroy(broccoli);
+        }
+        foreach (GameObject celery in celeries)
+        {
+            Destroy(celery);
+        }
+        foreach (GameObject brussel in brussels)
+        {
+            Destroy(brussel);
+        }
+        foreach (GameObject kale in kales)
+        {
+            Destroy(kale);
+        }
+        foreach (GameObject cabbage in cabbages)
+        {
+            Destroy(cabbage);
+        }
+        foreach (GameObject eggplant in eggplants)
+        {
+            Destroy(eggplant);
+        }
+        foreach (GameObject mustardGreen in mustardGreens)
+        {
+            Destroy(mustardGreen);
+        }
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -597,7 +678,8 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingMar()
     {
-        badEventText.text = "This is a test";
+        badEventText.text = "The lack of nutrients in the soil causes plant production to decrease by 20%";
+        percentLoss = .2f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -606,14 +688,16 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingApr()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "A colony of ladybugs move into the garden and make quick work of the aphids and other pests, keeping the plants healthy.";
+        percentGain = .3f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingApr()
     {
-        badEventText.text = "This is a test";
+        badEventText.text = "A suprise hailstorm damages all plants currently in the garden, breaking the sprouts and lowering their harvest.";
+        percentLoss = .75f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -623,14 +707,31 @@ public class SeasonManager : MonoBehaviour
     public void GoodThingMay()
     {
         goodEventText.text = "A local carpenter hears about your garden & makes a few bee boxes that " +
-            "soon attracts a colony. Total food grown increases by jklafjkjfadhds";
+            "soon attracts a colony. Total food grown increases by 50%";
+        percentGain = .5f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
     }
     public void BadThingMay()
     {
-        badEventText.text = "Naughty squirrels decide the garden is for them, and eat jifdakjdsafkjjdfks";
+        badEventText.text = "Naughty squirrels decide the garden is for them and eat the squash, cucumbers, tomatoes, and carrots";
+        foreach (GameObject tomato in tomatoes)
+        {
+            Destroy(tomato);
+        }
+        foreach (GameObject squash in squashes)
+        {
+            Destroy(squash);
+        }
+        foreach (GameObject cuc in cucs)
+        {
+            Destroy(cuc);
+        }
+        foreach (GameObject carrot in carrots)
+        {
+            Destroy(carrot);
+        }
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -666,7 +767,7 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingJul()
     {
-        badEventText.text = "A lack of rainfall causes a drought that kills all sensitive plants and decreases harvest by 25%";
+        badEventText.text = "A lack of rainfall causes a drought that decreases plant harvest by 25%";
         percentLoss = .25f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
@@ -684,9 +785,34 @@ public class SeasonManager : MonoBehaviour
     public void BadThingAug()
     {
         badEventText.text = "Temperatures spike due to climate change. All plants that can't survive at over 90 degrees die.";
+        percentLoss = .2f;
         foreach (GameObject celery in celeries)
         {
             Destroy(celery);
+        }
+        foreach (GameObject tomato in tomatoes)
+        {
+            Destroy(tomato);
+        }
+        foreach (GameObject squash in squashes)
+        {
+            Destroy(squash);
+        }
+        foreach (GameObject cuc in cucs)
+        {
+            Destroy(cuc);
+        }
+        foreach (GameObject broccoli in broccolies)
+        {
+            Destroy(broccoli);
+        }
+        foreach (GameObject lettuce in lettuces)
+        {
+            Destroy(lettuce);
+        }
+        foreach (GameObject carrot in carrots)
+        {
+            Destroy(carrot);
         }
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
@@ -696,7 +822,8 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingSep()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "Warm weather lets the last of the plants ripen, increasing harvest for this month by 15%!";
+        percentGain = .15f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -826,7 +953,7 @@ public class SeasonManager : MonoBehaviour
     }
     public void BadThingOct()
     {
-        badEventText.text = "Ash from forest fires in the North prevent you from planting and harvesting this month.";
+        badEventText.text = "Ash from forest fires in the North prevents you from leaving the house to plant and harvest this month.";
         plantButtonButton.transform.gameObject.SetActive(false);
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
@@ -836,7 +963,8 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingNov()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "The town gets together to help you mulch the garden beds, keeping the plants warm in the cold weather and increasing production by 10%";
+        percentGain = .1f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
@@ -938,7 +1066,8 @@ public class SeasonManager : MonoBehaviour
 
     public void GoodThingDec()
     {
-        goodEventText.text = "This is a test";
+        goodEventText.text = "Rainfalls keep the ground moist, preventing the late harvest plants from freezing.";
+        percentGain = .2f;
         eventButton.transform.gameObject.SetActive(true);
         badEventText.transform.gameObject.SetActive(true);
         goodEventText.transform.gameObject.SetActive(true);
